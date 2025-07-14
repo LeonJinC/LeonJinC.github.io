@@ -3,53 +3,283 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jin Hongqi, Dense mapping and visual SLAM</title>
+  <title>Jin Hongqi - Robotics Engineer | SLAM Specialist</title>
+  <meta name="description" content="Professional profile of Jin Hongqi, specializing in dense mapping and visual SLAM technologies.">
   <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --text-color: #333;
+      --light-gray: #f5f5f5;
+      --medium-gray: #e0e0e0;
+      --dark-gray: #7f8c8d;
+    }
+    
     body {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      align-items: flex-start;
+      min-height: 100vh;
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-gray);
     }
+    
     .container {
       display: flex;
+      flex-direction: column;
+      max-width: 900px;
+      width: 100%;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      border: 1px solid #ccc;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      background-color: var(--primary-color);
+      color: white;
     }
+    
+    .header-text {
+      flex: 1;
+    }
+    
     .photo {
-      margin-right: 20px;
+      margin-left: 30px;
     }
+    
     .photo img {
       border-radius: 50%;
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     }
+    
+    .name {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    
+    .title {
+      margin: 5px 0 0;
+      font-size: 1rem;
+      font-weight: normal;
+      color: var(--medium-gray);
+    }
+    
     .content {
-      max-width:  50vw;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+    
+    .main-content {
+      flex: 2;
+      min-width: 300px;
+      padding-right: 30px;
+    }
+    
+    .sidebar {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 5px;
+      margin-top: 25px;
+    }
+    
+    h3 {
+      color: var(--secondary-color);
+      margin-bottom: 5px;
+    }
+    
+    .experience-item, .education-item {
+      margin-bottom: 20px;
+    }
+    
+    .date {
+      color: var(--dark-gray);
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+    
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .skill {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 0.9rem;
+    }
+    
+    .contact-info {
+      margin-top: 20px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .contact-icon {
+      margin-right: 10px;
+      color: var(--secondary-color);
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      
+      .photo {
+        margin: 0 0 20px 0;
+      }
+      
+      .content {
+        flex-direction: column;
+      }
+      
+      .main-content {
+        padding-right: 0;
+      }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
   <div class="container">
-    <div class="photo">
-      <img src="https://github.com/LeonJinC/LeonJinC.github.io/blob/main/images/test.png?raw=true" alt="你的照片">
+    <div class="header">
+      <div class="header-text">
+        <h1 class="name">金闳奇（Jin Hongqi）</h1>
+        <p class="title">3D Reconstruction algorithm engineer</p>
+      </div>
+      <div class="photo">
+        <img src="https://github.com/LeonJinC/LeonJinC.github.io/blob/main/images/test.png?raw=true" alt="Jin Hongqi's Profile Photo">
+      </div>
     </div>
+    
     <div class="content">
-      <h1>你好，我是金闳奇（Jin Hongqi）</h1>
-      <h2>工作经历</h2>
-      <p>test</p>
-      <h2>项目经历</h2>
-      <p>test</p>
-      <h2>教育经历</h2>
-      <p>test</p>
+      <div class="main-content">
+        <section>
+          <h2>自我介绍</h2>
+          <p>
+            我在三维稠密重建和视觉SLAM具备较丰富的工程经验，热衷于开发大规模、稳定和高效的三维重建解决方案。
+        </p>
+        </section>
+        <section>
+          <h2>工作经历</h2>
+          <div class="experience-item">
+            <h3>Senior Robotics Engineer</h3>
+            <p class="date">June 2020 - Present</p>
+            <p>ABC Robotics, Shanghai</p>
+            <ul>
+              <li>Developed real-time dense mapping system for autonomous vehicles, improving accuracy by 30%</li>
+              <li>Optimized visual SLAM pipeline to reduce computational requirements by 40%</li>
+              <li>Led team of 5 engineers in developing next-generation navigation system</li>
+            </ul>
+          </div>
+          
+          <div class="experience-item">
+            <h3>Robotics Research Assistant</h3>
+            <p class="date">September 2018 - May 2020</p>
+            <p>Shanghai Robotics Institute</p>
+            <ul>
+              <li>Researched and implemented novel feature extraction algorithms for SLAM</li>
+              <li>Published 3 papers on dense mapping in peer-reviewed journals</li>
+              <li>Collaborated with industry partners on applied research projects</li>
+            </ul>
+          </div>
+        </section>
+        
+        <section>
+          <h2>项目经验</h2>
+          <div class="experience-item">
+            <h3>Real-Time Dense 3D Reconstruction</h3>
+            <p>Developed a GPU-accelerated dense reconstruction system using RGB-D cameras, achieving real-time performance at 30fps for indoor environments.</p>
+          </div>
+          
+          <div class="experience-item">
+            <h3>Multi-Sensor Visual SLAM</h3>
+            <p>Implemented a robust visual-inertial SLAM system combining monocular camera and IMU data, demonstrating improved tracking in feature-poor environments.</p>
+          </div>
+        </section>
+      </div>
+      
+      <div class="sidebar">
+        <section>
+          <h2>Skills</h2>
+          <div class="skills">
+            <span class="skill">3D Reconstruction</span>
+            <span class="skill">3DGS</span>
+            <span class="skill">Visual SLAM</span>
+            <span class="skill">AI</span>
+            <span class="skill">C++</span>
+            <span class="skill">Python</span>
+            <span class="skill">OpenMVG</span>
+            <span class="skill">OpenMVS</span>
+            <span class="skill">OpenCV</span>
+            <span class="skill">CUDA</span>
+            <span class="skill">SIMD</span>
+            <span class="skill">TensorFlow</span>
+            <span class="skill">Pytorch</span>
+            <span class="skill">Linux</span>
+          </div>
+        </section>
+        
+        <section>
+          <h2>Education</h2>
+          <div class="education-item">
+            <h3>广东工业大学 机械工程 硕士</h3>
+            <p class="date">2018 - 2021</p>
+            <p>学业奖学金一等奖；授权发明专利；</p>
+          </div>
+          
+          <div class="education-item">
+            <h3>广东工业大学 包装工程 学士</h3>
+            <p class="date">2013 - 2017</p>
+            <p>GPA 3.7/5.0；本科优秀毕业论文奖；</p>
+          </div>
+        </section>
+        
+        <section class="contact-info">
+          <h2>Contact</h2>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+            <span>739738709@qq.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+            <span>+86 188 1945 7624</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><i class="fab fa-github"></i></span>
+            <span>github.com/LeonJinC</span>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </body>
 </html>
-
