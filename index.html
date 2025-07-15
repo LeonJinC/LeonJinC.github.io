@@ -140,18 +140,18 @@
       padding-left: 15px;
     }
     
-    .experience-details li::before {
+    /* .experience-details li::before {
       content: "•";
       color: #3498db;
       font-weight: bold;
       position: absolute;
       left: 0;
-    }
+    } */
     
     /* Education Section - 优化版 */
     .education-item {
-      margin-bottom: 25px;
-      padding-bottom: 15px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
       border-bottom: 1px solid #f0f0f0;
     }
     
@@ -196,13 +196,13 @@
       padding-left: 15px;
     }
     
-    .education-highlights li::before {
+    /* .education-highlights li::before {
       content: "•";
       color: #3498db;
       font-weight: bold;
       position: absolute;
       left: 0;
-    }
+    } */
     
     /* Skills Section - 优化版 */
     .skills-container {
@@ -279,12 +279,12 @@
     .contact-item {
       display: flex;
       align-items: center;
-      font-size: 15px;
+      font-size: 12px;
     }
     
     .contact-icon {
-      width: 24px;
-      height: 24px;
+      width: 12px;
+      height: 12px;
       background: #2c3e50;
       color: white;
       border-radius: 50%;
@@ -292,7 +292,7 @@
       align-items: center;
       justify-content: center;
       margin-right: 10px;
-      font-size: 12px;
+      font-size: 9px;
     }
     
     /* Responsive Design */
@@ -355,7 +355,7 @@
     <!-- Header Section -->
     <div class="header">
       <div class="name-title">
-        <div class="name">金闳奇（Jin Hongqi）</div>
+        <div class="name">金闳奇</div>
         <div class="title">三维视觉算法工程师 | 专注稠密重建与SLAM</div>
       </div>
       <div class="photo">
@@ -369,8 +369,22 @@
       <div class="section">
         <h2 class="section-title">个人简介</h2>
         <p class="profile-text">
-          资深三维视觉算法工程师，在三维稠密重建和视觉SLAM领域拥有5年专业经验。专注于开发大规模、高精度的三维重建解决方案，擅长将前沿算法转化为工业级应用。具备优秀的跨学科问题解决能力和团队领导经验。
+          资深三维视觉算法工程师，在三维稠密重建和视觉SLAM领域拥有4年专业经验。专注于开发大规模、高精度的三维重建解决方案，擅长将前沿算法转化为工业级应用。
         </p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <span>739738709@qq.com</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <span>188-1945-7624</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <span>github.com/LeonJinC</span>
+          </div>
+        </div>
       </div>
       
       <!-- Work Experience -->
@@ -386,10 +400,8 @@
             <div class="date">2024.12 - 至今</div>
           </div>
           <ul class="experience-details">
-            <li>主导无人机三维重建系统研发，提升重建精度15%，降低处理时间20%</li>
-            <li>设计并实现基于多传感器融合的SLAM系统，在弱纹理环境下鲁棒性提升40%</li>
-            <li>优化点云配准算法，处理速度提升30%，支持TB级点云数据处理</li>
-            <li>开发基于3D高斯溅射的新型重建方法，模型质量提升25%</li>
+            <li>二三维实时建图算法研发（视觉SLAM定位、实时正射影像DOM、实时3D高斯、单目稠密建图）</li>
+            <li>大规模三维重建框架实现（多机融合定位、3D高斯、倾斜摄影Mesh、稠密点云PatchMatch）</li>
           </ul>
         </div>
         
@@ -402,10 +414,8 @@
             <div class="date">2022.03 - 2024.12</div>
           </div>
           <ul class="experience-details">
-            <li>领导5人团队开发农业场景三维重建系统，日处理农田数据超5000公顷</li>
-            <li>设计实时稠密建图算法，在嵌入式设备上实现每秒5帧的处理速度</li>
-            <li>研发多源数据融合技术，将定位精度提升至厘米级</li>
-            <li>申请发明专利3项，其中2项已获授权</li>
+            <li>机载端大规模正射影像建图框架实现（位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM）</li>
+            <li>FPV单目鱼眼实时定位和稠密重建（vins-mono定位、鱼眼imu-deroling去果冻、单目稠密建图）</li>
           </ul>
         </div>
 
@@ -418,84 +428,18 @@
             <div class="date">2020.02 - 2022.02</div>
           </div>
           <ul class="experience-details">
-            <li>开发医学影像三维重建算法，精度提升至亚毫米级</li>
-            <li>设计手术导航系统核心算法，误差控制在1mm以内</li>
-            <li>优化点云配准算法，处理时间缩短40%</li>
-            <li>参与开发基于深度学习的器官分割系统，准确率达98%</li>
+            <li>开发冠脉造影血管三维重建软件，正确反应出血管的形状、病变程度、量化参数等信息</li>
+            <li>设计并实现基于双视图的中心线射影重建算法</li>
           </ul>
         </div>
       </div>
-      
-      <!-- Education Section - 优化版 -->
-      <div class="section">
-        <h2 class="section-title">教育背景</h2>
-        
-        <div class="education-item">
-          <div class="education-header">
-            <div class="education-title">广东工业大学 | 机械工程 硕士</div>
-            <div class="date">2018.09 - 2021.06</div>
-          </div>
-          <div class="education-details">
-            <div class="education-info">
-              <p><strong>研究方向：</strong>金属表面三维视觉重建与检测，导师：陈新度（机电工程学院副院长）</p>
-            </div>
-            <ul class="education-highlights">
-              <li>获得授权发明专利2项</li>
-              <li>连续两年获得学业一等奖学金</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="education-item">
-          <div class="education-header">
-            <div class="education-title">广东工业大学 | 包装工程 学士</div>
-            <div class="date">2013.09 - 2017.06</div>
-          </div>
-          <div class="education-details">
-            <div class="education-info">
-              <p><strong>主修课程：</strong>计算机辅助设计、材料力学、工程制图</p>
-            </div>
-            <ul class="education-highlights">
-              <li>GPA 3.7/5.0 (专业前10%)</li>
-              <li>本科优秀毕业论文奖</li>
-              <li>参与计算机集成制造（CIMS）实验室，负责视觉检测模块开发</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Projects Section -->
-      <div class="section">
-        <h2 class="section-title">项目经验</h2>
-        
-        <div class="project-item">
-          <div class="project-title">实时稠密三维重建系统</div>
-          <div class="project-description">
-            开发基于RGB-D相机的GPU加速实时重建系统，在室内场景实现30fps处理速度。创新性地融合传统几何方法与深度学习，在嵌入式设备上达到业界领先的性能指标。
-          </div>
-        </div>
-        
-        <div class="project-item">
-          <div class="project-title">多传感器视觉惯性SLAM</div>
-          <div class="project-description">
-            设计并实现融合单目相机、IMU和GPS数据的SLAM系统，显著提升在特征贫乏环境下的跟踪稳定性。采用基于关键帧的优化后端，内存占用减少50%。
-          </div>
-        </div>
-        
-        <div class="project-item">
-          <div class="project-title">大规模点云处理框架</div>
-          <div class="project-description">
-            开发支持TB级点云数据的处理框架，集成点云滤波、配准、分割和重建算法。通过CUDA并行优化，处理速度提升40%，已应用于智慧城市三维建模。
-          </div>
-        </div>
-      </div>
-      
+
       <!-- Skills Section - 优化版 -->
       <div class="section">
         <h2 class="section-title">专业技能</h2>
         <div class="skills-container">
           <div class="skill-category">
-            <div class="category-title">核心领域</div>
+            <div class="category-title">核心算法</div>
             <div class="skill-list">
               <div>稠密点云重建</div>
               <div>SLAM/VIO/SfM</div>
@@ -535,25 +479,96 @@
           </div>
         </div>
       </div>
-      
-      <!-- Contact Section -->
+      <!-- Education Section - 优化版 -->
       <div class="section">
-        <h2 class="section-title">联系方式</h2>
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <span>739738709@qq.com</span>
+        <h2 class="section-title">教育背景</h2>
+        
+        <div class="education-item">
+          <div class="education-header">
+            <div class="education-title">广东工业大学 | 机械工程 硕士</div>
+            <div class="date">2018.09 - 2021.06</div>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <span>188-1945-7624</span>
+          <div class="education-details">
+            <div class="education-info">
+              <p><strong>研究方向：</strong>金属表面三维视觉重建与检测</p>
+            </div>
+            <ul class="education-highlights">
+              <li>获得授权发明专利2项</li>
+              <li>连续两年获得学业一等奖学金</li>
+            </ul>
           </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fab fa-github"></i></div>
-            <span>github.com/LeonJinC</span>
+        </div>
+        
+        <div class="education-item">
+          <div class="education-header">
+            <div class="education-title">广东工业大学 | 包装工程 学士</div>
+            <div class="date">2013.09 - 2017.06</div>
+          </div>
+          <div class="education-details">
+            <div class="education-info">
+              <p><strong>主修课程：</strong>计算机辅助设计、材料力学、工程制图</p>
+            </div>
+            <ul class="education-highlights">
+              <li>GPA 3.7/5.0 (专业前10%)</li>
+              <li>本科优秀毕业论文奖</li>
+              <li>参与计算机集成制造（CIMS）实验室，负责视觉检测模块开发</li>
+            </ul>
           </div>
         </div>
       </div>
+      
+      <!-- Projects Section -->
+      <div class="section">
+        <h2 class="section-title">项目经验</h2>
+        
+        <div class="project-item">
+          <div class="project-title">实时3D高斯溅射</div>
+          <div class="project-description">
+            <li>位姿估计：实时位姿估计ORB-SLAM以及AI特征应用</li>
+            <li>深度估计：AI单目depth-anything、多视图quadtree-mapping</li>
+            <li>实时3D高斯：光栅化反向传播的内存操作优化、空间局部性优化、瓦片binning细化</li>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">实时二维</div>
+          <div class="project-description">
+            <li>实时位姿估计ORB-SLAM</li>
+            <li>基于高斯差分金字塔的多波段图像融合拼接算法实现以及金字塔瓦片化实现</li>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title">机载端大规模正射影像建图框架实现</div>
+          <div class="project-description">
+            <li>机载端大规模实时正射影像建图框架实现：位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM</li>
+            <li>机载端实时SfM定位框架实现：Autoscale-SIFT特征匹配、1GB低内存框架整合优化、实时分群优化和导出</li>
+          </div>
+        </div>
+        
+        <div class="project-item">
+          <div class="project-title">鱼眼imu-deroling去果冻</div>
+          <div class="project-description">
+            <li>机载端鱼眼 imu-derolling方法实现（陀螺仪角速度积分、imu和相机外参标定、混合单应warp）</li>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-item">
+        <div class="project-title">基于DSP完整复现SIFT算法</div>
+        <div class="project-description">
+          <li>基于DSP的底层数据结构和SIMD接口进行算法异构开发，从0到1完整复现SIFT算法</li>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">单目鱼眼稠密重建</div>
+        <div class="project-description">
+          <li>实时定位框架开发。基于vins-mono搭建视觉定位VIO定位框架，包括imu预积分、imu视觉约束下的非线性优化、边缘化先验、回环检测、快速重定位和pose-graph全局优化</li>
+          <li>稠密点云重建框架实现。鱼眼环向透视、四叉树像素选择、前向SGBM代价聚合、稠密点云实时过滤</li>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </body>
