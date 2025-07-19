@@ -262,6 +262,15 @@
       margin-bottom: 8px;
     }
     
+    .project-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .project-title a:hover {
+      text-decoration: underline;
+    }
+    
     .project-description {
       color: #555;
       padding-left: 15px;
@@ -269,6 +278,23 @@
     
     .project-description li {
       white-space: normal;
+    }
+    
+    .project-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .project-image {
+      flex: 1 0 calc(33.333% - 10px);
+      max-width: calc(33.333% - 10px);
+      height: auto;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      object-fit: contain;
     }
     
     /* Contact Section */
@@ -346,6 +372,20 @@
         text-decoration: none !important;
         color: inherit !important;
       }
+      
+      .project-images {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+      }
+      
+      .project-image {
+        flex: 1 0 calc(33.333% - 10px) !important;
+        max-width: calc(33.333% - 10px) !important;
+        height: auto !important;
+        border: 1px solid #eee !important;
+        page-break-inside: avoid !important;
+      }
     }
     
     /* Responsive Design */
@@ -394,11 +434,21 @@
       .skill-category {
         flex: 0 0 100%;
       }
+      
+      .project-image {
+        flex: 1 0 calc(50% - 10px) !important;
+        max-width: calc(50% - 10px) !important;
+      }
     }
     
     @media (max-width: 480px) {
       .skill-list div {
         white-space: normal;
+      }
+      
+      .project-image {
+        flex: 1 0 100% !important;
+        max-width: 100% !important;
       }
     }
   </style>
@@ -577,42 +627,52 @@
         <h2 class="section-title">项目经验</h2>
         
         <div class="project-item">
-          <div class="project-title">实时二三维建图</div>
+          <div class="project-title"><a href="https://gitee.com/LeonJin/flymapper_-pc" target="_blank">实时二三维建图</a></div>
           <div class="project-description">
             <li>位姿估计：实时位姿估计ORB-SLAM以及AI特征应用</li>
-             <li>深度估计：AI单目depth-anything、多视图quadtree-mapping</li>
-             <li>实时二维：基于高斯差分金字塔的多波段图像融合拼接算法实现以及金字塔瓦片化实现</li>
+            <li>深度估计：AI单目depth-anything、多视图quadtree-mapping</li>
+            <li>实时二维：基于高斯差分金字塔的多波段图像融合拼接算法实现以及金字塔瓦片化实现</li>
             <li>实时3D高斯：GS-SLAM框架、点云聚类和剔除、SparseAdam稀疏梯度优化、瓦片AABB细化</li>
           </div>
+          <!-- <div class="project-images">
+          </div> -->
         </div>
 
         <div class="project-item">
-          <div class="project-title">机载端大规模正射影像建图框架实现</div>
+          <div class="project-title"><a href="https://gitee.com/scene-map/open_aerial_mapper" target="_blank">机载端大规模正射影像建图框架实现</a></div>
           <div class="project-description">
             <li>机载端大规模实时正射影像建图框架实现：位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM</li>
             <li>机载端实时SfM定位框架实现：Autoscale-SIFT特征匹配、1GB低内存框架整合优化、实时分群优化和导出</li>
           </div>
+          <!-- <div class="project-images">
+          </div> -->
         </div>
         
         <div class="project-item">
-          <div class="project-title">鱼眼imu-deroling去果冻</div>
+          <div class="project-title"><a href="https://gitee.com/LeonJin/open_fisheye_derolling" target="_blank">鱼眼imu-deroling去果冻</a></div>
           <div class="project-description">
             <li>机载端鱼眼 imu-derolling方法实现（陀螺仪角速度积分、imu和相机外参标定、混合单应warp）</li>
           </div>
+          <!-- <div class="project-images">
+          </div> -->
         </div>
 
         <div class="project-item">
-          <div class="project-title">单目鱼眼稠密重建</div>
+          <div class="project-title"><a href="https://gitee.com/LeonJin/open_fisheye_mapping" target="_blank">单目鱼眼稠密重建</a></div>
           <div class="project-description">
             <li>基于vins-mono视觉定位VIO定位、鱼眼环向透视、四叉树像素选择、前向SGBM代价聚合、稠密点云实时过滤</li>
           </div>
+          <!-- <div class="project-images">
+          </div> -->
         </div>
 
         <div class="project-item">
-          <div class="project-title">基于DSP完整复现SIFT算法</div>
+          <div class="project-title"><a href="https://gitee.com/LeonJin/sift_algorithm" target="_blank">基于DSP完整复现SIFT算法</a></div>
           <div class="project-description">
             <li>基于DSP的底层数据结构和SIMD接口进行算法异构开发，从0到1完整复现SIFT算法</li>
           </div>
+          <!-- <div class="project-images">
+          </div> -->
         </div>
 
       </div>
