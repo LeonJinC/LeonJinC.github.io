@@ -528,7 +528,7 @@
             <div class="date">2022.03 - 2024.12 (2.7年)</div>
           </div>
           <ul class="experience-details">
-            <li>机载端大规模正射影像建图框架实现（位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM)</li>
+            <li>机载端大规模正射影像建图框架实现（位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM）</li>
             <li>FPV单目鱼眼实时定位和稠密重建（vins-mono定位、鱼眼imu-deroling去果冻、单目稠密建图）</li>
           </ul>
         </div>
@@ -592,7 +592,7 @@
         <div class="project-item">
           <div class="project-title"><a href="https://gitee.com/LeonJin/flymapper_-pc" target="_blank">实时三维建图</a></div>
           <div class="project-description">
-            <li>GS-SLAM框架、点云聚类和剔除、SparseAdam稀疏梯度优化、瓦片AABB细化</li>
+            <li>3DGS-SLAM框架、实时单目稠密点云、SparseAdam稀疏梯度优化、瓦片AABB细化、高斯点云聚类和剔除</li>
           </div>
 
           <!-- <div class="project-images">
@@ -611,8 +611,8 @@
         <div class="project-item">
           <div class="project-title"><a href="https://gitee.com/LeonJin/flymapper_-pc" target="_blank">实时二维建图</a></div>
           <div class="project-description">
-            <li>位姿估计：实时位姿估计ORB-SLAM以及AI特征应用、GPS紧耦合优化、相机自标定</li>
-            <li>实时二维：基于高斯差分金字塔的多波段图像融合拼接算法实现以及金字塔瓦片化实现</li>
+            <li>实时位姿估计ORB-SLAM、GPS紧耦合优化、相机自标定</li>
+            <li>基于高斯差分金字塔的多波段图像拼接算法、金字塔瓦片化和磁盘缓存实现</li>
           </div>
 
           <!-- <div class="project-images">
@@ -629,10 +629,10 @@
 
         </div>
         <div class="project-item">
-          <div class="project-title"><a href="https://gitee.com/scene-map/open_aerial_mapper" target="_blank">机载端大规模正射影像建图框架实现</a></div>
+          <div class="project-title"><a href="https://gitee.com/scene-map/open_aerial_mapper" target="_blank">机载端大规模正射影像建图</a></div>
           <div class="project-description">
-            <li>机载端大规模实时正射影像建图框架实现：位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM</li>
-            <li>机载端实时SfM定位框架实现：Autoscale-SIFT特征匹配、1GB低内存框架整合优化、实时分群优化和导出</li>
+            <li>位姿估计采用分群SfM，稠密重建MVS、高程图DSM和正射图DOM根据内存动态分块计算</li>
+            <li>最低可适配1GB ARM机载端建图、大规模8000亩落地出图（8GB内存）、弱纹理场景的特征算法优化（autoscale-sift特征及匹配）</li>
           </div>
 
           <!-- <div class="project-images">
@@ -650,9 +650,9 @@
         </div>
         
         <div class="project-item">
-          <div class="project-title"><a href="https://gitee.com/LeonJin/open_fisheye_derolling" target="_blank">鱼眼imu-deroling去果冻</a></div>
+          <div class="project-title"><a href="https://gitee.com/LeonJin/open_fisheye_derolling" target="_blank">机载端鱼眼imu-deroling去果冻</a></div>
           <div class="project-description">
-            <li>机载端鱼眼 imu-derolling方法实现（陀螺仪角速度积分、imu和相机外参标定、混合单应warp）</li>
+            <li>陀螺仪角速度积分、imu和相机外参标定、imu-derolling、混合单应warp</li>
           </div>
 
           <!-- <div class="project-images">
@@ -691,9 +691,10 @@
 
 
         <div class="project-item">
-          <div class="project-title"><a href="https://gitee.com/LeonJin/sift_algorithm" target="_blank">基于DSP完整复现SIFT算法</a></div>
+          <div class="project-title"><a href="https://gitee.com/LeonJin/sift_algorithm" target="_blank">DSP端实现SIFT算法硬件加速</a></div>
           <div class="project-description">
-            <li>基于DSP的底层数据结构和SIMD接口进行算法异构开发，从0到1完整复现SIFT算法</li>
+            <li>基于Ceva XM4芯片的数据结构和SIMD接口完整复现SIFT算法</li>
+            <li>高斯滤波、高斯差分、局部极值点优化、双调排序、角度分配、三线性差值的旋转不变表示</li>
           </div>
 
           <!-- <div class="project-images">
@@ -719,9 +720,10 @@
           <div class="skill-category">
             <div class="category-title">核心算法</div>
             <div class="skill-list">
-              <div>稠密点云重建</div>
               <div>SLAM/VIO/SfM</div>
               <div>3D高斯溅射</div>
+              <div>正射影像</div>
+              <div>稠密点云重建</div>
               <div>Mesh模型重建</div>
             </div>
           </div>
@@ -731,7 +733,7 @@
             <div class="skill-list">
               <div>C++</div>
               <div>SIMD指令集</div>
-              <div>CUDA并行编程</div>
+              <div>CUDA/OpenCL</div>
               <div>Python</div>
             </div>
           </div>
@@ -739,11 +741,11 @@
           <div class="skill-category">
             <div class="category-title">框架与工具</div>
             <div class="skill-list">
+              <div>ceres/g2o</div>
               <div>OpenCV</div>
-              <div>PyTorch/TF</div>
-              <div>colmap/glomap</div>
               <div>OpenMVG/MVS</div>
-              <div>ceres/g2o优化库</div>
+              <div>colmap/glomap</div>
+              <div>PyTorch/TF</div>
             </div>
           </div>
           
@@ -752,8 +754,8 @@
             <div class="skill-list">
               <div>Linux程序开发</div>
               <div>算法优化与加速</div>
-              <div>多线程与并行计算</div>
-              <div>跨平台模型部署</div>
+              <div>多线程并行计算</div>
+              <div>模型部署</div>
             </div>
           </div>
         </div>
