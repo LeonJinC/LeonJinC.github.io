@@ -592,7 +592,7 @@
         <h2 class="section-title">项目经验</h2>
         
         <div class="project-item">
-          <div class="project-title"><a href="https://gitee.com/LeonJin/flymapper_-pc" target="_blank">实时三维建图</a></div>
+          <div class="project-title"><a href="https://gitee.com/LeonJin/realtime3d" target="_blank">实时三维建图</a></div>
           <div class="project-description">
             <li>3DGS-SLAM框架、SparseAdam稀疏梯度优化、瓦片AABB细化、高斯点云聚类和剔除</li>
             <li>实时单目稠密点云，支持两种模式切换：1、DepthAnything深度估计和多尺度非线性拟合；2、QuadtreeMapping四叉树多视图深度计算</li>
@@ -612,9 +612,9 @@
 
         </div>
         <div class="project-item">
-          <div class="project-title"><a href="https://gitee.com/LeonJin/flymapper_-pc" target="_blank">实时二维建图</a></div>
+          <div class="project-title"><a href="https://gitee.com/LeonJin/realtime2d" target="_blank">实时二维建图</a></div>
           <div class="project-description">
-            <li>视频流采用libRTMP拉流、FFmpeg-CUDA视频硬解码、CUDA实现YUV12转RGB</li>
+            <li>视频流采用libRTMP拉流、FFmpeg-CUDA视频硬解码、CUDA实现YUV-NV12转RGB</li>
             <li>实时位姿估计ORB-SLAM、GPS紧耦合优化、相机自标定</li>
             <li>基于高斯差分金字塔的多波段图像拼接算法、金字塔瓦片化和磁盘缓存实现</li>
           </div>
@@ -633,7 +633,7 @@
 
         </div>
         <div class="project-item">
-          <div class="project-title"><a href="https://gitee.com/scene-map/open_aerial_mapper" target="_blank">机载端大规模正射影像建图</a></div>
+          <div class="project-title"><a href="https://gitee.com/scene-map/unitymapper" target="_blank">机载端大规模正射影像建图</a></div>
           <div class="project-description">
             <li>位姿估计采用分群SfM，稠密重建MVS、高程图DSM和正射图DOM根据内存动态分块计算</li>
             <li>最低可适配1GB ARM机载端建图、大规模8000亩落地出图（8GB内存）、弱纹理场景的特征算法优化（autoscale-sift特征及匹配）</li>
@@ -656,7 +656,8 @@
         <div class="project-item">
           <div class="project-title"><a href="https://gitee.com/LeonJin/open_fisheye_derolling" target="_blank">机载端鱼眼imu-deroling去果冻</a></div>
           <div class="project-description">
-            <li>陀螺仪角速度积分、imu和相机外参标定、imu-derolling、混合单应warp</li>
+            <li>imu-tk标定imu的加速度计和陀螺仪内参、kalibr标定imu和相机外参、imu内容和图像内容时延标定、RS的readout时间标定</li>
+            <li>陀螺仪角速度积分相机相对姿态、imu-derolling单应矩阵构建、混合单应及其SIMD加速计算</li>
           </div>
 
           <!-- <div class="project-images">
