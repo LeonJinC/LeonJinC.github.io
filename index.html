@@ -549,8 +549,9 @@
             <div class="date">2024.12 - 至今</div>
           </div>
           <ul class="experience-details">
-            <li>实时建图算法研发（视频流、ORB-SLAM定位、实时正射影像DOM、实时3D高斯、单目稠密建图）</li>
+            <li>实时建图算法研发（视频流、ORB-SLAM、实时3DGS高斯溅射、实时正射DOM、实时稠密点云）</li>
             <li>大规模三维重建框架（多机融合定位、3D高斯、倾斜摄影Mesh、稠密点云PatchMatch）</li>
+            <li>建模算法应用于中科天网无人机云平台（UOS），实现云端建图</li>
             <li>使用技术：C++、CUDA、G2O、CGAL、OpenMVS、OpenCV、libRTMP</li>
           </ul>
         </div>
@@ -566,6 +567,7 @@
           <ul class="experience-details">
             <li>机载端大规模正射影像建图（位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM）</li>
             <li>FPV单目鱼眼实时定位和稠密重建（vins-mono定位、鱼眼imu-deroling去果冻、单目稠密建图）</li>
+            <li>建模算法应用于P系列农业无人机和M系列遥感无人机，实现机载端建图</li>
             <li>使用技术：C++、OpenCL、SIMD、Ceres、OpenMVG、OpenMVS、GDAL、OpenCV</li>
           </ul>
         </div>
@@ -590,13 +592,14 @@
       
       <!-- Projects Section -->
       <div class="section">
-        <h2 class="section-title">项目经验</h2>
+        <h2 class="section-title">项目经历</h2>
         
         <div class="project-item">
           <div class="project-title"><a href="https://github.com/LeonJinC/realtime3d" target="_blank">实时三维建图</a></div>
           <div class="project-description">
             <li>3DGS-SLAM框架、SparseAdam稀疏梯度优化、瓦片AABB细化、高斯点云聚类和剔除</li>
-            <li>实时单目稠密点云，支持两种模式切换：1、DepthAnything深度估计和多尺度非线性拟合；2、QuadtreeMapping四叉树多视图深度计算</li>
+            <li>实时单目稠密点云重建、QuadtreeMapping四叉树多视图深度计算、多视图深度一致性过滤</li>
+            <li>高斯点云转换为 Cesium 3D Tiles 格式，支持spz 压缩</li>
           </div>
           <a href="https://github.com/LeonJinC/realtime3d" target="https://github.com/LeonJinC/realtime3d">
             <div class="project-images">
@@ -654,6 +657,7 @@
           <div class="project-description">
             <li>位姿估计采用分群SfM，稠密重建MVS、高程图DSM和正射图DOM根据内存动态分块计算</li>
             <li>最低可适配1GB ARM机载端建图（A311D）、大规模8000亩落地出图（RK3588 8GB内存）、弱纹理场景的特征算法优化（autoscale-sift特征及匹配）</li>
+            <li>数据转换为3DTiles格式（imagery、pnts和terrain），配合CesiumJS可实现前端可视化</li>
           </div>
 
           <a href="https://github.com/LeonJinC/unitymapper" target="https://github.com/LeonJinC/unitymapper">
