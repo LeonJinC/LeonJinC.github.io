@@ -503,7 +503,7 @@
       <div class="section">
         <h2 class="section-title">个人简介</h2>
         <p class="profile-text">
-          我本硕毕业于广东工业大学，在三维重建和视觉SLAM领域拥有4年+工作经验，开发了多种三维重建算法（实时二三维、3D高斯溅射、稠密点云、倾斜摄影Mesh、正射影像DOM），加速前沿算法落地应用
+          我本硕毕业于广东工业大学，在三维重建和视觉SLAM领域拥有4年+工作经验，开发过多种三维重建算法（实时二三维、3D高斯溅射、稠密点云、倾斜摄影、正射影像），加速前沿算法落地应用
         </p>
 
       </div>
@@ -551,8 +551,8 @@
           <ul class="experience-details">
             <li>实时建图算法研发（视频流、ORB-SLAM、实时3DGS高斯溅射、实时正射DOM、实时稠密点云）</li>
             <li>大规模三维重建框架（多机融合定位、3D高斯、倾斜摄影Mesh、稠密点云PatchMatch）</li>
-            <li>建模算法应用于中科天网无人机云平台（UOS），实现云端建图</li>
-            <li>使用技术：C++、CUDA、G2O、CGAL、OpenMVS、OpenCV、libRTMP</li>
+            <li>建模算法应用于中科天网无人机云平台（UOS），支持英伟达和华为昇腾平台，实现云端建图</li>
+            <li>使用技术：C++、CUDA、G2O、OpenMVS、OpenCV、CGAL、libRTMP、FFmpeg、AscendCL</li>
           </ul>
         </div>
         
@@ -567,7 +567,7 @@
           <ul class="experience-details">
             <li>机载端大规模正射影像建图（位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM）</li>
             <li>FPV单目鱼眼实时定位和稠密重建（vins-mono定位、鱼眼imu-deroling去果冻、单目稠密建图）</li>
-            <li>建模算法应用于P系列农业无人机和M系列遥感无人机，实现机载端建图</li>
+            <li>建模算法应用于P系列农业无人机和M系列遥感无人机，支持A311D和RK3588平台，实现机载端建图</li>
             <li>使用技术：C++、OpenCL、SIMD、Ceres、OpenMVG、OpenMVS、GDAL、OpenCV</li>
           </ul>
         </div>
@@ -726,9 +726,9 @@
             <div class="skill-list">
               <div>SLAM/VIO/SfM</div>
               <div>3D高斯溅射</div>
-              <div>正射影像</div>
-              <div>稠密点云重建</div>
-              <div>Mesh模型重建</div>
+              <div>正射影像DOM</div>
+              <div>SGBM/PatchMatch</div>
+              <div>倾斜摄影Mesh</div>
             </div>
           </div>
           
@@ -745,7 +745,7 @@
           <div class="skill-category">
             <div class="category-title">框架与工具</div>
             <div class="skill-list">
-              <div>ceres/g2o</div>
+              <div>Ceres/G2O</div>
               <div>OpenCV</div>
               <div>OpenMVG/MVS</div>
               <div>colmap/glomap</div>
@@ -754,12 +754,13 @@
           </div>
           
           <div class="skill-category">
-            <div class="category-title">工程能力</div>
+            <div class="category-title">工程开发</div>
             <div class="skill-list">
               <div>Linux程序开发</div>
               <div>算法优化与加速</div>
               <div>多线程并行计算</div>
-              <div>模型部署</div>
+              <div>Docker部署</div>
+              <div>Git代码管理</div>
             </div>
           </div>
         </div>
