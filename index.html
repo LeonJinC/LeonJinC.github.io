@@ -53,6 +53,7 @@
             text-align: left;            /* 左对齐更自然 */
             display: block;
             box-sizing: border-box;
+            cursor: pointer;  /* 提示可点击 */
         }
         .nav-card:hover {
             transform: translateY(-4px);
@@ -61,7 +62,6 @@
             color: white;
             border-left-color: #1f4f7a;   /* 深色装饰条 */
         }
-        /* 卡片内的标题排版 */
         .nav-card h2 {
             margin: 0;
             font-size: 1.4rem;           /* 稍微增大字体 */
@@ -72,14 +72,6 @@
             white-space: normal;          /* 允许换行，防止长标题截断 */
             word-break: break-word;
         }
-        /* 图标和文字可以自然排列，不需要额外改动，保留原有表情符号 */
-        
-        /* 移除水平滚动条相关样式，因为不再需要 */
-        .nav-container::-webkit-scrollbar {
-            display: none;
-        }
-        
-        /* 针对小屏幕微调 */
         @media (max-width: 500px) {
             body {
                 padding: 15px;
@@ -102,28 +94,67 @@
 <body>
     <h1>🗂️ 简历</h1>
     
-    <!-- 导航容器现在改为垂直排列 (flex-direction: column) -->
     <div class="nav-container">
-        <a href="CV/3D-reconstruction-algorithm-engineer/index.html" class="nav-card">
+        <!-- 保留了原来的链接地址，但移除了href，改用点击事件+密码弹窗 -->
+        <div class="nav-card" data-url="CV/3D-reconstruction-algorithm-engineer/index.html">
             <h2>📄 三维重建算法工程师</h2>
-        </a>
-        <a href="CV/SLAM-algorithm-engineer/index.html" class="nav-card">
+        </div>
+        <div class="nav-card" data-url="CV/SLAM-algorithm-engineer/index.html">
             <h2>📄 SLAM算法工程师</h2>
-        </a>
-        <a href="CV/deep-learning-high-performance-computing-engineer/index.html" class="nav-card">
+        </div>
+        <div class="nav-card" data-url="CV/deep-learning-high-performance-computing-engineer/index.html">
             <h2>📄 深度学习高性能计算工程师</h2>
-        </a>
-        <a href="CV/research-scholar/index.html" class="nav-card">
+        </div>
+        <div class="nav-card" data-url="CV/research-scholar/index.html">
             <h2>📄 科研学者</h2>
-        </a>
+        </div>
     </div>
 
-    <!-- 原来的滚动检测脚本已无用，但保留无妨；也可以移除。这里简单注释掉，避免干扰 -->
-    <!-- <script>
-        // 原水平滚动提示不再需要，但保留为空函数或删除均可
-        const container = document.querySelector('.nav-container');
-        const hint = document.getElementById('scrollHint');
-        if (container && hint) hint.style.display = 'none';
-    </script> -->
+    <script>
+        (function() {
+            const ACCESS_HASH = '726696e7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // 伪哈希示例
+            
+            // 简单的字符串转哈希函数 (用于对比)
+            function simpleHash(str) {
+                let hash = 0;
+                for (let i = 0; i < str.length; i++) {
+                    const char = str.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash; // 转换为32位整数
+                }
+                return (hash >>> 0).toString(16).padStart(8, '0') + 
+                       'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // 填充至类似长度，仅为演示
+            }
+
+            // 获取所有卡片 (class="nav-card")
+            const cards = document.querySelectorAll('.nav-card');
+
+            // 为每个卡片添加点击事件
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // 获取要跳转的URL (从 data-url 属性读取)
+                    const targetUrl = this.dataset.url;
+                    if (!targetUrl) {
+                        console.warn('未找到对应的链接');
+                        return;
+                    }
+
+                    // 弹出密码输入框
+                    const userInput = prompt('🔒 此链接受保护，请输入密码:');
+
+                    // 用户点击取消 或 输入为空时，不进行任何跳转
+                    if (userInput === null) return;  // 取消
+                    if (simpleHash(userInput) === ACCESS_HASH) {
+                        // 密码正确，跳转
+                        window.location.href = targetUrl;
+                    } else {
+                        // 密码错误，提示
+                        alert('❌ 密码错误，无法访问。');
+                        console.warn(simpleHash(userInput));
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
