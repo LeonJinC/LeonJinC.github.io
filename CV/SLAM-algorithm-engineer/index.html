@@ -1,11 +1,789 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>简历/SLAM算法工程师</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>金闳奇_SLAM算法工程师</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+      line-height: 1.5;
+      color: #000; /* 将默认字体颜色改为黑色 */
+      background-color: #f5f7fa;
+      padding: 0;
+    }
+    
+    .resume-container {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+      padding: 15mm; /* 四周统一15mm边距 */
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Header Section */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5mm 0 10mm 0;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 2mm;
+    }
+    
+    .name-title {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .name {
+      font-size: 22pt;
+      font-weight: 600;
+      margin-bottom: 2mm;
+      white-space: nowrap;
+      color: #000; /* 名字改为黑色 */
+    }
+    
+    .title {
+      font-size: 12pt;
+      font-weight: 400;
+      color: #000; /* 标题改为黑色 */
+      white-space: nowrap;
+    }
+    
+    .photo img {
+      width: 35mm;
+      height: 35mm;
+      border-radius: 50%;
+      border: 1px solid #eee;
+      object-fit: cover;
+      margin-left: 10mm;
+    }
+    .project_photo img {
+      width: auto;
+      height: 35mm;
+      border: 1px solid #eee;
+      object-fit: cover;
+      margin-left: 10mm;
+    }
+    /* Content Section */
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .section {
+      margin-bottom: 5mm;
+      page-break-inside: avoid;
+    }
+    
+    .section-title {
+      color: #000; /* 章节标题改为黑色 */
+      font-size: 14pt;
+      font-weight: 600;
+      padding-bottom: 2mm;
+      margin-bottom: 3mm;
+      /* border-bottom: 1px solid #3498db;*/
+      border-bottom: 1px solid #ccc; /* 灰色 */ 
+    }
+    
+    /* Profile Section 个人简介*/
+    .profile-text {
+      font-size: 11pt;
+      color: #000; /* 简介文字改为黑色 */
+      line-height: 1.6;
+      margin-bottom: 3mm;
+    }
+    
+    /* Experience Section 工作经历*/
+    .experience-item {
+      margin-bottom: 20px;
+    }
+    
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: nowrap;
+      margin-bottom: 5px;
+    }
+    
+    .experience-title-container {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: baseline;
+      min-width: 0;
+      flex-shrink: 1;
+    }
+    
+    .experience-title {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #000; /* 经历标题改为黑色 */
+      white-space: nowrap;
+    }
+    
+    .company {
+      color: #000; /* 公司名改为黑色 */
+      font-weight: 500;
+      white-space: nowrap;
+      margin-left: 5px;
+    }
+    
+    .date {
+      color: #000; /* 日期改为黑色 */
+      font-size: 14px;
+      font-style: italic;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+    
+    .experience-details {
+      padding-left: 20px;
+      font-size: 11pt;
+      color: #000; /* 详情列表文字改为黑色 */
+    }
+    
+    .experience-details li {
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 15px;
+      color: #000; /* 列表项改为黑色 */
+    }
+    
+    /* Education Section 教育背景*/
+    .education-item {
+      margin-bottom: 8px;
+      padding-bottom: 1px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .education-item:last-child {
+      border-bottom: none;
+    }
+    
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: nowrap;
+      margin-bottom: 5px;
+    }
+    
+    .education-title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #000; /* 教育标题改为黑色 */
+      white-space: nowrap;
+    }
+    
+    .education-details {
+      font-size: 11pt;
+      color: #000; /* 教育详情改为黑色 */
+    }
+    
+    .education-info {
+      margin-bottom: 8px;
+    }
+    
+    .education-details p {
+      margin-bottom: 5px;
+    }
+    
+    .education-highlights {
+      padding-left: 20px;
+      margin-top: 8px;
+      color: #000; /* 高亮列表文字改为黑色 */
+    }
+    
+    .education-highlights li {
+      margin-bottom: 5px;
+      position: relative;
+      padding-left: 15px;
+      color: #000; /* 列表项改为黑色 */
+    }
+    
+    /* Skills Section 专业技能*/
+    .skills-container {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .skill-category {
+      flex: 1 0 22%;
+      min-width: 0;
+      margin-bottom: 10px;
+      page-break-inside: avoid;
+      overflow: hidden;
+    }
+    
+    .category-title {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #000; /* 技能类别标题改为黑色 */
+      margin-bottom: 8px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #eee;
+      white-space: nowrap;
+    }
+    
+    .skill-list {
+      color: #000; /* 技能列表文字改为黑色 */
+      line-height: 1.7;
+      font-size: 11pt;
+    }
+    
+    .skill-list div {
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #000; /* 技能项改为黑色 */
+    }
+    
+    .skill-list div::before {
+      content: "•";
+      color: #000; /* 列表前小黑点改为黑色 */
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    
+    /* Projects Section 项目经验*/
+    .project-item {
+      margin-bottom: 20px;
+      page-break-inside: avoid;
+    }
+    
+    .project-title {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #000; /* 项目标题改为黑色 */
+      margin-bottom: 8px;
+    }
+    
+    .project-title a {
+      color: #000; /* 链接颜色改为黑色 */
+      text-decoration: none;
+    }
+    
+    .project-title a:hover {
+      text-decoration: underline;
+    }
+    
+    .project-description {
+      color: #000; /* 项目描述文字改为黑色 */
+      padding-left: 15px;
+      font-size: 11pt;
+    }
+    
+    .project-description li {
+      white-space: normal;
+      color: #000; /* 项目描述列表项改为黑色 */
+    }
+    
+    .project-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .project-image {
+      flex: 1 0 calc(33.333% - 10px);
+      max-width: calc(33.333% - 10px);
+      height: auto;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+    
+    /* Contact Section */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 10px;
+      padding-top: 1px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      white-space: nowrap;
+      color: #000; /* 联系信息改为黑色 */
+    }
+    
+    .contact-icon {
+      width: 12px;
+      height: 12px;
+      background: #000; /* 图标背景改为黑色 */
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      font-size: 9px;
+    }
+    
+    /* 链接颜色在 body 和全局中已设为黑色，这里确保覆盖 */
+    a {
+      color: #000; /* 所有链接改为黑色 */
+    }
+    
+    /* Print Specific Styles */
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        background: none !important;
+        color: #000 !important; /* 打印时确保黑色 */
+      }
+      
+      .resume-container {
+        width: 100% !important;
+        height: auto !important;
+        box-shadow: none !important;
+        padding: 15mm !important;
+        margin: 0 !important;
+      }
+      
+      .header, .content {
+        padding: 0 !important;
+      }
+      
+      .section {
+        margin-bottom: 5mm !important;
+      }
+      
+      .experience-header {
+        display: flex !important;
+      }
+      
+      .date {
+        white-space: nowrap !important;
+        color: #000 !important;
+      }
+      
+      .skills-container {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+      }
+      
+      .skill-category {
+        flex: 1 0 22% !important;
+        page-break-inside: avoid !important;
+      }
+      
+      a {
+        text-decoration: none !important;
+        color: #000 !important; /* 打印时链接黑色 */
+      }
+      
+      .project-images {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+      }
+      
+      .project-image {
+        flex: 1 0 calc(33.333% - 10px) !important;
+        max-width: calc(33.333% - 10px) !important;
+        height: auto !important;
+        border: 1px solid #eee !important;
+        page-break-inside: avoid !important;
+      }
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .skills-container {
+        flex-wrap: wrap;
+      }
+      .skill-category {
+        flex: 0 0 calc(50% - 20px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      
+      .photo {
+        margin: 20px auto 0;
+      }
+      .project_photo {
+        margin: 20px auto 0;
+      }
+      .content {
+        padding: 30px;
+      }
+      
+      .education-header, .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .date {
+        margin-top: 5px;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .skills-container {
+        flex-direction: column;
+      }
+      
+      .skill-category {
+        flex: 0 0 100%;
+      }
+      
+      .project-image {
+        flex: 1 0 calc(50% - 10px) !important;
+        max-width: calc(50% - 10px) !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .skill-list div {
+        white-space: normal;
+      }
+      
+      .project-image {
+        flex: 1 0 100% !important;
+        max-width: 100% !important;
+      }
+    }
+    /* 新增控制样式：图片展示容器的显示控制类 */
+    .project-image-container {
+        display: var(--show-project-images, block);
+    }
+  </style>
 </head>
 <body>
-    <h1>test</h1>
+  <!-- 步骤1：修改此处变量以控制图片显示 -->
+  <style>
+    :root {
+        /* 修改变量值: 要显示图片，设为 'block'； 要隐藏图片，设为 'none' */
+        --show-project-images: none;
+    }
+  </style>
+  <div class="resume-container">
+    <!-- Header Section -->
+    <div class="header">
+      <div class="name-title">
+        <div class="name">金闳奇</div>
+        <div class="title">SLAM算法工程师 | ORB-SLAM、VINS-MONO、VGGT、IMU-derolling</div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <span>jinhongqi1995@gmail.com</span>
+          </div>
+          <!-- <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <span>188-194-57624</span>
+          </div> -->
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <a href="https://leonjinc.github.io/CV/SLAM-algorithm-engineer/index.html"><span>leonjinc.github.io</span></a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-youtube"></i></div>
+            <a href="https://www.youtube.com/@3dRecon-SLAM"><span>3dRecon-SLAM</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="https://github.com/LeonJinC/LeonJinC.github.io/blob/main/images/person/person.jpeg?raw=true" alt="金闳奇">
+      </div>
+    </div>
+    
+    <!-- Content Section -->
+    <div class="content">
+      <!-- Profile Section -->
+      <div class="section">
+        <h2 class="section-title">个人简介</h2>
+        <p class="profile-text">
+          本硕毕业于广东工业大学，在SLAM领域拥有4年+工作经验，主要从事SLAM算法研发和应用工作，
+          包括实时3DGS、单目鱼眼FPV实时定位、IMU图像去果冻、VGGT-SLAM、大场景SfM
+        </p>
+
+      </div>
+
+      <!-- Work Experience -->
+      <div class="section">
+        <h2 class="section-title">工作经历</h2>
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="experience-title-container">
+              <span class="experience-title">算法工程师</span>
+              <span class="company">中科云图-研发中心</span>
+            </div>
+            <div class="date">2024.12 - 至今</div>
+          </div>
+          <ul class="experience-details">
+            <li>ORB-SLAM开发，包括ORB特征提取、词袋模型BOW、跟踪tracking、局部建图local-mapping、回环检测loop-closing</li>
+            <li>多机融合定位开发，包括多架次的坐标系对齐、重叠区域检测、PnP位姿估计、相似变换矩阵估计和全局BA优化</li>
+            <li>SfM算法研发，包括增量式SfM、全局式SfM、glomap、colmap等</li>
+            <li>AI-SLAM开发，包括XFeat-SLAM采用XFeat提换ORB作为特征提取器并跑通ORB-SLAM、VGGT-SLAM采用关键帧前馈推理出深度图、相机位姿和相机内参</li>
+            <li>建图算法应用于中科天网无人机云平台（UOS），支持英伟达和华为昇腾平台，实现云端建图</li>
+            <li>使用技术：C++、G2O、Ceres、OpenMVS、OpenMVG、OpenCV、CUDA、AscendCL</li>
+          </ul>
+        </div>
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="experience-title-container">
+              <span class="experience-title">视觉算法工程师</span>
+              <span class="company">极飞科技-空间数字化部门</span>
+            </div>
+            <div class="date">2022.03 - 2024.12 (2.7年)</div>
+          </div>
+          <ul class="experience-details">
+            <li>机载端大规模准实时建图，包括增量式SfM、GPS紧耦合优化、位姿分群导出、1GB低内存框架整合优化</li>
+            <li>vins-mono定位开发，包括imu预积分、imu视觉约束下的非线性优化、边缘化先验、回环检测、快速重定位和pose-graph全局优化</li>
+            <li>imu相机标定，包括imu-tk标定imu的加速度计和陀螺仪内参、kalibr标定imu和相机外参、imu内容和图像内容时延标定、RS的readout时间标定</li>
+            <li>鱼眼imu-deroling去果冻，包括陀螺仪角速度积分相机相对姿态、imu-derolling单应矩阵构建、混合单应及其SIMD加速计算</li>
+            <li>DSP端SIFT算法开发，基于Ceva XM4芯片的数据结构和SIMD接口完整复现SIFT算法</li>
+            <li>弱纹理场景的特征算法优化，Auto-scale特征提取和匹配</li>
+            <li>建图算法应用于P系列农业无人机和M系列遥感无人机，支持A311D和RK3588平台，实现机载端建图</li>
+            <li>使用技术：C++、OpenCL、SIMD、Ceres、OpenMVG、OpenMVS、OpenCV</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="experience-title-container">
+              <span class="experience-title">视觉算法工程师</span>
+              <span class="company">GE通用电气-精准医学研究院</span>
+            </div>
+            <div class="date">2021.06 - 2022.02 (0.7年)</div>
+          </div>
+          <ul class="experience-details">
+            <li>冠脉造影血管三维重建（Unet语义分割网络、基于双视图的中心线射影重建、网格重建）</li>
+            <li>CT图像管状结构重建（TDF管检测过滤、逆梯度流跟踪分割）</li>
+            <!-- <li>使用技术：C++、Python、OpenCL、OpenCV、ITK、MITK、VTK、QT</li> -->
+          </ul>
+        </div>
+      </div>
+      <!-- Education Section -->
+      <div class="section">
+        <h2 class="section-title">教育背景</h2>
+        
+        <div class="education-item">
+          <div class="education-header">
+            <div class="education-title">硕士  |  广东工业大学  |  机械工程</div>
+            <div class="date">2018.09 - 2021.06</div>
+          </div>
+          <div class="education-details">
+            <ul class="education-highlights">
+              <li>计算机集成制造（CIMS）实验室，一等学业奖学金、授权发明专利2项</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="education-item">
+          <div class="education-header">
+            <div class="education-title">学士  |  广东工业大学  |  包装工程</div>
+            <div class="date">2013.09 - 2017.06</div>
+          </div>
+          <div class="education-details">
+            <ul class="education-highlights">
+              <li>二等学业奖学金、本科优秀毕业论文奖、CET6</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Projects Section -->
+      <div class="section">
+        <h2 class="section-title">项目经历</h2>
+        
+        <div class="project-item">
+          <div class="project-title"><a href="https://github.com/LeonJinC/realtime3d" target="_blank">实时三维建图</a></div>
+          <div class="project-description">
+            <li>SLAM采用ORB-SLAM、Xfeat-SLAM、VGGT-SLAM</li>
+            <li>高斯建模采用LiteGS、SparseAdam稀疏梯度优化、瓦片AABB细化、高斯点云聚类和剔除</li>
+            <li>实时单目稠密点云重建、QuadtreeMapping四叉树多视图深度计算、多视图深度一致性过滤</li>
+          </div>
+          <!-- 步骤2：为每个图片链接块添加 project-image-container 类 -->
+          <div class="project-image-container">
+            <a href="https://github.com/LeonJinC/realtime3d" target="https://github.com/LeonJinC/realtime3d">
+              <div class="project-images">
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/realtime3d/blob/master/fig/framework.jpg?raw=true">
+                </div>
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/realtime3d/blob/master/fig/result.jpg?raw=true">
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-title"><a href="https://github.com/LeonJinC/realtime2d" target="_blank">实时二维建图和多机融合</a></div>
+          <div class="project-description">
+            <li>视频流采用libRTMP拉流、FFmpeg-CUDA视频硬解码、CUDA实现YUV-NV12转RGB</li>
+            <li>实时位姿估计ORB-SLAM、GPS紧耦合优化、相机自标定</li>
+            <li>多机融合实现多架次的坐标系对齐和联合优化，包括重叠区域检测、PnP位姿估计、相似变换矩阵估计、全局BA优化</li>
+          </div>
+          <div class="project-image-container">
+            <a href="https://github.com/LeonJinC/realtime2d" target="https://github.com/LeonJinC/realtime2d">
+              <div class="project-images">
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/realtime2d/blob/master/fig/framework.jpg?raw=true">
+                </div>
+                <div class="project_photo">
+                    <img src="https://github.com/LeonJinC/realtime2d_clusterfusion/blob/master/fig/framework.jpg?raw=true">
+                  </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-title"><a href="https://github.com/LeonJinC/unitymapper" target="_blank">机载端大规模正射影像建图</a></div>
+          <div class="project-description">
+            <li>增量式SfM位姿估计、Auto-scale特征提取和匹配、位姿分群导出</li>
+            <li>最低可适配1GB ARM机载端建图（A311D）、大规模8000亩落地出图（RK3588 8GB内存）、弱纹理场景的特征算法优化</li>
+          </div>
+          <div class="project-image-container">
+            <a href="https://github.com/LeonJinC/unitymapper" target="https://github.com/LeonJinC/unitymapper">
+              <div class="project-images">
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/unitymapper/blob/master/fig/framework.jpg?raw=true">
+                </div>
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/unitymapper/blob/master/fig/result.jpg?raw=true">
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-item">
+          <div class="project-title"><a href="https://github.com/LeonJinC/open_fisheye_derolling" target="_blank">机载端鱼眼imu-deroling去果冻</a></div>
+          <div class="project-description">
+            <li>imu-tk标定imu的加速度计和陀螺仪内参、kalibr标定imu和相机外参、imu内容和图像内容时延标定、RS的readout时间标定</li>
+            <li>陀螺仪角速度积分相机相对姿态、imu-derolling单应矩阵构建、混合单应及其SIMD加速计算</li>
+          </div>
+          <div class="project-image-container">
+            <a href="https://github.com/LeonJinC/open_fisheye_derolling" target="https://github.com/LeonJinC/open_fisheye_derolling">
+              <div class="project-images">
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/open_fisheye_derolling/blob/master/fig/framework.jpg?raw=true">
+                </div>
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/open_fisheye_derolling/blob/master/fig/result.jpg?raw=true">
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+
+        <div class="project-item">
+          <div class="project-title"><a href="https://github.com/LeonJinC/sift_algorithm" target="_blank">DSP端实现SIFT算法硬件加速</a></div>
+          <div class="project-description">
+            <li>基于Ceva XM4芯片的数据结构和SIMD接口完整复现SIFT算法</li>
+            <li>高斯滤波、高斯差分、局部极值点优化、双调排序、角度分配、三线性差值的旋转不变表示</li>
+          </div>
+
+          <!-- <div class="project-images">
+            <div class="project_photo">
+              <img src="https://github.com/LeonJinC/LeonJinC.github.io/blob/main/images/基于DSP完整复现SIFT算法/image1.png?raw=true">
+            </div>
+            <div class="project_photo">
+              <img src="https://github.com/LeonJinC/LeonJinC.github.io/blob/main/images/基于DSP完整复现SIFT算法/image2.png?raw=true">
+            </div>
+            <div class="project_photo">
+              <img src="https://github.com/LeonJinC/LeonJinC.github.io/blob/main/images/基于DSP完整复现SIFT算法/image3.png?raw=true">
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+
+      <!-- Skills Section -->
+      <div class="section">
+        <h2 class="section-title">专业技能</h2>
+        <div class="skills-container">
+          <div class="skill-category">
+            <div class="category-title">核心算法</div>
+            <div class="skill-list">
+              <div>SLAM/VIO/SfM</div>
+              <div>3D高斯溅射</div>
+              <div>IMU图像去果冻</div>
+              <div>VINS-MONO</div>
+              <!-- <div>正射影像DOM</div> -->
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <div class="category-title">编程语言</div>
+            <div class="skill-list">
+              <div>C++</div>
+              <div>SIMD指令集</div>
+              <div>CUDA/OpenCL</div>
+              <div>Python</div>
+              <!-- <div>AscendCL</div> -->
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <div class="category-title">框架与工具</div>
+            <div class="skill-list">
+              <div>Ceres/G2O</div>
+              <div>OpenCV</div>
+              <div>OpenMVG/MVS</div>
+              <div>colmap/glomap</div>
+              <!-- <div>PyTorch/TF</div> -->
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <div class="category-title">工程开发</div>
+            <div class="skill-list">
+              <div>Linux程序开发</div>
+              <div>算法优化与加速</div>
+              <div>多线程并行计算</div>
+              <div>Docker部署</div>
+              <!-- <div>Git代码管理</div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
 </body>
 </html>
