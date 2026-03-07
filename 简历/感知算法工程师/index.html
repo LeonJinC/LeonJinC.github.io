@@ -15,7 +15,7 @@
     body {
       font-family: 'Segoe UI', 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
       line-height: 1.5;
-      color: #333;
+      color: #000; /* 将默认字体颜色改为黑色 */
       background-color: #f5f7fa;
       padding: 0;
     }
@@ -51,12 +51,13 @@
       font-weight: 600;
       margin-bottom: 2mm;
       white-space: nowrap;
+      color: #000; /* 名字改为黑色 */
     }
     
     .title {
       font-size: 12pt;
       font-weight: 400;
-      color: #555;
+      color: #000; /* 标题改为黑色 */
       white-space: nowrap;
     }
     
@@ -88,18 +89,19 @@
     }
     
     .section-title {
-      color: #2c3e50;
+      color: #000; /* 章节标题改为黑色 */
       font-size: 14pt;
       font-weight: 600;
       padding-bottom: 2mm;
       margin-bottom: 3mm;
-      border-bottom: 1px solid #3498db;
+      /* border-bottom: 1px solid #3498db;*/
+      border-bottom: 1px solid #ccc; /* 灰色 */ 
     }
     
     /* Profile Section 个人简介*/
     .profile-text {
       font-size: 11pt;
-      color: #444;
+      color: #000; /* 简介文字改为黑色 */
       line-height: 1.6;
       margin-bottom: 3mm;
     }
@@ -128,19 +130,19 @@
     .experience-title {
       font-size: 14pt;
       font-weight: 600;
-      color: #2980b9;
+      color: #000; /* 经历标题改为黑色 */
       white-space: nowrap;
     }
     
     .company {
-      color: #555;
+      color: #000; /* 公司名改为黑色 */
       font-weight: 500;
       white-space: nowrap;
       margin-left: 5px;
     }
     
     .date {
-      color: #7f8c8d;
+      color: #000; /* 日期改为黑色 */
       font-size: 14px;
       font-style: italic;
       white-space: nowrap;
@@ -151,12 +153,14 @@
     .experience-details {
       padding-left: 20px;
       font-size: 11pt;
+      color: #000; /* 详情列表文字改为黑色 */
     }
     
     .experience-details li {
       margin-bottom: 4px;
       position: relative;
       padding-left: 15px;
+      color: #000; /* 列表项改为黑色 */
     }
     
     /* Education Section 教育背景*/
@@ -181,13 +185,13 @@
     .education-title {
       font-size: 11pt;
       font-weight: 600;
-      color: #2c3e50;
+      color: #000; /* 教育标题改为黑色 */
       white-space: nowrap;
     }
     
     .education-details {
       font-size: 11pt;
-      color: #555;
+      color: #000; /* 教育详情改为黑色 */
     }
     
     .education-info {
@@ -201,12 +205,14 @@
     .education-highlights {
       padding-left: 20px;
       margin-top: 8px;
+      color: #000; /* 高亮列表文字改为黑色 */
     }
     
     .education-highlights li {
       margin-bottom: 5px;
       position: relative;
       padding-left: 15px;
+      color: #000; /* 列表项改为黑色 */
     }
     
     /* Skills Section 专业技能*/
@@ -229,7 +235,7 @@
     .category-title {
       font-size: 14pt;
       font-weight: 600;
-      color: #2c3e50;
+      color: #000; /* 技能类别标题改为黑色 */
       margin-bottom: 8px;
       padding-bottom: 3px;
       border-bottom: 1px solid #eee;
@@ -237,7 +243,7 @@
     }
     
     .skill-list {
-      color: #555;
+      color: #000; /* 技能列表文字改为黑色 */
       line-height: 1.7;
       font-size: 11pt;
     }
@@ -249,11 +255,12 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      color: #000; /* 技能项改为黑色 */
     }
     
     .skill-list div::before {
       content: "•";
-      color: #3498db;
+      color: #000; /* 列表前小黑点改为黑色 */
       font-weight: bold;
       position: absolute;
       left: 0;
@@ -268,12 +275,12 @@
     .project-title {
       font-size: 14pt;
       font-weight: 600;
-      color: #2980b9;
+      color: #000; /* 项目标题改为黑色 */
       margin-bottom: 8px;
     }
     
     .project-title a {
-      color: inherit;
+      color: #000; /* 链接颜色改为黑色 */
       text-decoration: none;
     }
     
@@ -282,13 +289,14 @@
     }
     
     .project-description {
-      color: #555;
+      color: #000; /* 项目描述文字改为黑色 */
       padding-left: 15px;
       font-size: 11pt;
     }
     
     .project-description li {
       white-space: normal;
+      color: #000; /* 项目描述列表项改为黑色 */
     }
     
     .project-images {
@@ -322,12 +330,13 @@
       align-items: center;
       font-size: 12px;
       white-space: nowrap;
+      color: #000; /* 联系信息改为黑色 */
     }
     
     .contact-icon {
       width: 12px;
       height: 12px;
-      background: #2c3e50;
+      background: #000; /* 图标背景改为黑色 */
       color: white;
       border-radius: 50%;
       display: flex;
@@ -337,12 +346,18 @@
       font-size: 9px;
     }
     
+    /* 链接颜色在 body 和全局中已设为黑色，这里确保覆盖 */
+    a {
+      color: #000; /* 所有链接改为黑色 */
+    }
+    
     /* Print Specific Styles */
     @media print {
       body {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         background: none !important;
+        color: #000 !important; /* 打印时确保黑色 */
       }
       
       .resume-container {
@@ -367,6 +382,7 @@
       
       .date {
         white-space: nowrap !important;
+        color: #000 !important;
       }
       
       .skills-container {
@@ -381,7 +397,7 @@
       
       a {
         text-decoration: none !important;
-        color: inherit !important;
+        color: #000 !important; /* 打印时链接黑色 */
       }
       
       .project-images {
@@ -464,9 +480,20 @@
         max-width: 100% !important;
       }
     }
+    /* 新增控制样式：图片展示容器的显示控制类 */
+    .project-image-container {
+        display: var(--show-project-images, block);
+    }
   </style>
 </head>
 <body>
+  <!-- 步骤1：修改此处变量以控制图片显示 -->
+  <style>
+    :root {
+        /* 修改变量值: 要显示图片，设为 'block'； 要隐藏图片，设为 'none' */
+        --show-project-images: block;
+    }
+  </style>
   <div class="resume-container">
     <!-- Header Section -->
     <div class="header">
@@ -601,17 +628,19 @@
             <li>实时单目稠密点云重建、QuadtreeMapping四叉树多视图深度计算、多视图深度一致性过滤</li>
             <li>高斯点云转换为 Cesium 3D Tiles 格式，支持spz 压缩</li>
           </div>
-          <a href="https://github.com/LeonJinC/realtime3d" target="https://github.com/LeonJinC/realtime3d">
-            <div class="project-images">
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/realtime3d/blob/master/fig/framework.jpg?raw=true">
+          <!-- 步骤2：为每个图片链接块添加 project-image-container 类 -->
+          <div class="project-image-container">
+            <a href="https://github.com/LeonJinC/realtime3d" target="https://github.com/LeonJinC/realtime3d">
+              <div class="project-images">
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/realtime3d/blob/master/fig/framework.jpg?raw=true">
+                </div>
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/realtime3d/blob/master/fig/result.jpg?raw=true">
+                </div>
               </div>
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/realtime3d/blob/master/fig/result.jpg?raw=true">
-              </div>
-            </div>
-          </a>
-
+            </a>
+          </div>
         </div>
         <div class="project-item">
           <div class="project-title"><a href="https://github.com/LeonJinC/realtime2d" target="_blank">实时二维建图</a></div>
@@ -620,18 +649,18 @@
             <li>实时位姿估计ORB-SLAM、GPS紧耦合优化、相机自标定</li>
             <li>基于高斯差分金字塔的多波段图像拼接算法、金字塔瓦片化和磁盘缓存实现</li>
           </div>
-
-          <a href="https://github.com/LeonJinC/realtime2d" target="https://github.com/LeonJinC/realtime2d">
-            <div class="project-images">
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/realtime2d/blob/master/fig/framework.jpg?raw=true">
+          <div class="project-image-container">
+            <a href="https://github.com/LeonJinC/realtime2d" target="https://github.com/LeonJinC/realtime2d">
+              <div class="project-images">
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/realtime2d/blob/master/fig/framework.jpg?raw=true">
+                </div>
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/realtime2d/blob/master/fig/result.jpg?raw=true">
+                </div>
               </div>
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/realtime2d/blob/master/fig/result.jpg?raw=true">
-              </div>
-            </div>
-          </a>
-
+            </a>
+          </div>
         </div>
         <div class="project-item">
           <div class="project-title"><a href="https://github.com/LeonJinC/realtime2d_clusterfusion" target="_blank">多机融合建图</a></div>
@@ -639,18 +668,18 @@
             <li>单架次采用实时二维建图方案，多机融合实现多架次的坐标系对齐和联合优化</li>
             <li>重叠区域检测、PnP位姿估计、相似变换矩阵估计、全局BA优化</li>
           </div>
-
-          <a href="https://github.com/LeonJinC/realtime2d_clusterfusion" target="https://github.com/LeonJinC/realtime2d_clusterfusion">
-            <div class="project-images">
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/realtime2d_clusterfusion/blob/master/fig/framework.jpg?raw=true">
+          <div class="project-image-container">
+            <a href="https://github.com/LeonJinC/realtime2d_clusterfusion" target="https://github.com/LeonJinC/realtime2d_clusterfusion">
+              <div class="project-images">
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/realtime2d_clusterfusion/blob/master/fig/framework.jpg?raw=true">
+                </div>
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/realtime2d_clusterfusion/blob/master/fig/result.jpg?raw=true">
+                </div>
               </div>
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/realtime2d_clusterfusion/blob/master/fig/result.jpg?raw=true">
-              </div>
-            </div>
-          </a>
-
+            </a>
+          </div>
         </div>
         <div class="project-item">
           <div class="project-title"><a href="https://github.com/LeonJinC/unitymapper" target="_blank">机载端大规模正射影像建图</a></div>
@@ -659,18 +688,18 @@
             <li>最低可适配1GB ARM机载端建图（A311D）、大规模8000亩落地出图（RK3588 8GB内存）、弱纹理场景的特征算法优化（autoscale-sift特征及匹配）</li>
             <li>数据转换为3DTiles格式（imagery、pnts和terrain），配合CesiumJS可实现前端可视化</li>
           </div>
-
-          <a href="https://github.com/LeonJinC/unitymapper" target="https://github.com/LeonJinC/unitymapper">
-            <div class="project-images">
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/unitymapper/blob/master/fig/framework.jpg?raw=true">
+          <div class="project-image-container">
+            <a href="https://github.com/LeonJinC/unitymapper" target="https://github.com/LeonJinC/unitymapper">
+              <div class="project-images">
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/unitymapper/blob/master/fig/framework.jpg?raw=true">
+                </div>
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/unitymapper/blob/master/fig/result.jpg?raw=true">
+                </div>
               </div>
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/unitymapper/blob/master/fig/result.jpg?raw=true">
-              </div>
-            </div>
-          </a>
-
+            </a>
+          </div>
         </div>
         
         <div class="project-item">
@@ -679,18 +708,18 @@
             <li>imu-tk标定imu的加速度计和陀螺仪内参、kalibr标定imu和相机外参、imu内容和图像内容时延标定、RS的readout时间标定</li>
             <li>陀螺仪角速度积分相机相对姿态、imu-derolling单应矩阵构建、混合单应及其SIMD加速计算</li>
           </div>
-
-          <a href="https://github.com/LeonJinC/open_fisheye_derolling" target="https://github.com/LeonJinC/open_fisheye_derolling">
-            <div class="project-images">
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/open_fisheye_derolling/blob/master/fig/framework.jpg?raw=true">
+          <div class="project-image-container">
+            <a href="https://github.com/LeonJinC/open_fisheye_derolling" target="https://github.com/LeonJinC/open_fisheye_derolling">
+              <div class="project-images">
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/open_fisheye_derolling/blob/master/fig/framework.jpg?raw=true">
+                </div>
+                <div class="project_photo">
+                  <img src="https://github.com/LeonJinC/open_fisheye_derolling/blob/master/fig/result.jpg?raw=true">
+                </div>
               </div>
-              <div class="project_photo">
-                <img src="https://github.com/LeonJinC/open_fisheye_derolling/blob/master/fig/result.jpg?raw=true">
-              </div>
-            </div>
-          </a>
-
+            </a>
+          </div>
         </div>
 
 
