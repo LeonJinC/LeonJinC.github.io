@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>金闳奇 - 感知算法工程师</title>
+  <title>金闳奇_三维重建算法工程师</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <style>
     * {
@@ -491,7 +491,7 @@
   <style>
     :root {
         /* 修改变量值: 要显示图片，设为 'block'； 要隐藏图片，设为 'none' */
-        --show-project-images: block;
+        --show-project-images: none;
     }
   </style>
   <div class="resume-container">
@@ -499,7 +499,7 @@
     <div class="header">
       <div class="name-title">
         <div class="name">金闳奇</div>
-        <div class="title">感知算法工程师 | 计算机视觉、三维重建、3D高斯、SLAM和CUDA开发</div>
+        <div class="title">三维重建算法工程师 | Mesh、3DGS、SLAM和CUDA</div>
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
@@ -511,7 +511,7 @@
           </div> -->
           <div class="contact-item">
             <div class="contact-icon"><i class="fab fa-github"></i></div>
-            <a href="https://leonjinc.github.io"><span>leonjinc.github.io</span></a>
+            <a href="https://leonjinc.github.io/CV/3D-reconstruction-algorithm-engineer/index.html"><span>leonjinc.github.io</span></a>
           </div>
           <div class="contact-item">
             <div class="contact-icon"><i class="fab fa-youtube"></i></div>
@@ -530,7 +530,8 @@
       <div class="section">
         <h2 class="section-title">个人简介</h2>
         <p class="profile-text">
-          我本硕毕业于广东工业大学，在三维重建和视觉SLAM领域拥有4年+工作经验，开发过多种三维重建算法（实时二三维、3D高斯溅射、稠密点云、倾斜摄影、正射影像），加速前沿算法落地应用
+          本硕毕业于广东工业大学，在三维重建和视觉SLAM领域拥有4年+工作经验，主要从事三维重建和SLAM的算法研发和应用工作，
+          包括实时二三维、3D高斯溅射、稠密点云、网格重建、正射影像和物体矢量化
         </p>
 
       </div>
@@ -545,8 +546,8 @@
           </div>
           <div class="education-details">
             <ul class="education-highlights">
-              <li>计算机集成制造（CIMS）实验室，负责金属表面三维视觉重建与AI缺陷目标检测算法研究</li>
-              <li>学业奖学金、授权发明专利2项</li>
+              <li>计算机集成制造（CIMS）实验室，负责金属表面多视立体重建与目标检测算法研究</li>
+              <li>一等学业奖学金、授权发明专利2项</li>
             </ul>
           </div>
         </div>
@@ -558,7 +559,7 @@
           </div>
           <div class="education-details">
             <ul class="education-highlights">
-              <li>学业奖学金、本科优秀毕业论文奖、CET6</li>
+              <li>二等学业奖学金、本科优秀毕业论文奖、CET6</li>
             </ul>
           </div>
         </div>
@@ -571,13 +572,13 @@
           <div class="experience-header">
             <div class="experience-title-container">
               <span class="experience-title">算法工程师</span>
-              <span class="company">中科云图-低空经济研究院</span>
+              <span class="company">中科云图-研发中心</span>
             </div>
             <div class="date">2024.12 - 至今</div>
           </div>
           <ul class="experience-details">
-            <li>实时建图算法研发（视频流、ORB-SLAM、实时3DGS高斯溅射、实时正射DOM、实时稠密点云）</li>
-            <li>大规模三维重建框架（多机融合定位、3D高斯、倾斜摄影Mesh、稠密点云PatchMatch）</li>
+            <li>实时建模算法研发（视频流、ORB-SLAM、实时3DGS、实时正射DOM、实时稠密点云）</li>
+            <li>大规模离线建模算法研发（多机融合定位、离线3DGS、网格重建Mesh、纹理映射、稠密点云重建）</li>
             <li>建模算法应用于中科天网无人机云平台（UOS），支持英伟达和华为昇腾平台，实现云端建图</li>
             <li>使用技术：C++、CUDA、G2O、OpenMVS、OpenCV、CGAL、libRTMP、FFmpeg、AscendCL</li>
           </ul>
@@ -586,14 +587,15 @@
         <div class="experience-item">
           <div class="experience-header">
             <div class="experience-title-container">
-              <span class="experience-title">资深视觉算法工程师 (T6)</span>
+              <span class="experience-title">视觉算法工程师</span>
               <span class="company">极飞科技-空间数字化部门</span>
             </div>
             <div class="date">2022.03 - 2024.12 (2.7年)</div>
           </div>
           <ul class="experience-details">
             <li>机载端大规模正射影像建图（位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM）</li>
-            <li>FPV单目鱼眼实时定位和稠密重建（vins-mono定位、鱼眼imu-deroling去果冻、单目稠密建图）</li>
+            <li>单目鱼眼实时定位和建图（imu-deroling去果冻、vins-mono定位、稠密重建quadtree-mapping）</li>
+            <li>障碍物三维重建和矢量化（YOLOV5检测分割、line3d三维重建和矢量化、电线三维拓扑连接）</li>
             <li>建模算法应用于P系列农业无人机和M系列遥感无人机，支持A311D和RK3588平台，实现机载端建图</li>
             <li>使用技术：C++、OpenCL、SIMD、Ceres、OpenMVG、OpenMVS、GDAL、OpenCV</li>
           </ul>
@@ -605,10 +607,10 @@
               <span class="experience-title">视觉算法工程师</span>
               <span class="company">GE通用电气-精准医学研究院</span>
             </div>
-            <div class="date">2020.02 - 2022.02 (2年)</div>
+            <div class="date">2021.06 - 2022.02 (0.7年)</div>
           </div>
           <ul class="experience-details">
-            <li>冠脉造影血管三维重建（Unet语义分割网络、基于双视图的中心线射影重建算法）</li>
+            <li>冠脉造影血管三维重建（Unet语义分割网络、基于双视图的中心线射影重建、网格重建）</li>
             <li>CT图像管状结构重建（TDF管检测过滤、逆梯度流跟踪分割）</li>
             <li>使用技术：C++、Python、OpenCL、OpenCV、ITK、MITK、VTK、QT</li>
           </ul>
@@ -757,7 +759,7 @@
               <div>3D高斯溅射</div>
               <div>正射影像DOM</div>
               <div>SGBM/PatchMatch</div>
-              <div>倾斜摄影Mesh</div>
+              <div>网格重建Mesh</div>
             </div>
           </div>
           
@@ -768,6 +770,7 @@
               <div>SIMD指令集</div>
               <div>CUDA/OpenCL</div>
               <div>Python</div>
+              <div>AscendCL</div>
             </div>
           </div>
           
