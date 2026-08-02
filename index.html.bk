@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简历导航</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 800px;        /* 收窄宽度，更适合垂直阅读 */
+            margin: 0 auto;
+            padding: 30px 20px;
+            background-color: #f5f7fa;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 12px;
+            display: inline-block;
+            margin: 0 0 30px 0;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        /* 垂直容器 — 关键修改 */
+        .nav-container {
+            display: flex;
+            flex-direction: column;    /* 主轴为垂直方向 */
+            align-items: center;       /* 卡片居中对齐 */
+            gap: 20px;
+            width: 100%;
+            max-width: 450px;          /* 限制容器宽度，让卡片更舒适 */
+            margin: 0 auto;
+            padding: 10px 0 20px 0;
+        }
+        /* 卡片样式调整：宽度适应垂直容器，不再限制不换行 */
+        .nav-card {
+            background: white;
+            border-radius: 16px;        /* 稍大圆角，更柔和 */
+            padding: 22px 25px;          /* 上下内边距增加，更饱满 */
+            width: 100%;                 /* 撑满容器宽度 */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.3s, background-color 0.2s;
+            text-decoration: none;
+            color: #34495e;
+            border-left: 6px solid transparent; /* 预留装饰条，hover时可变化 */
+            text-align: left;            /* 左对齐更自然 */
+            display: block;
+            box-sizing: border-box;
+            cursor: pointer;  /* 提示可点击 */
+        }
+        .nav-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 30px rgba(52,152,219,0.15);
+            background-color: #3498db;
+            color: white;
+            border-left-color: #1f4f7a;   /* 深色装饰条 */
+        }
+        .nav-card h2 {
+            margin: 0;
+            font-size: 1.4rem;           /* 稍微增大字体 */
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            white-space: normal;          /* 允许换行，防止长标题截断 */
+            word-break: break-word;
+        }
+        @media (max-width: 500px) {
+            body {
+                padding: 15px;
+                justify-content: flex-start; /* 顶部对齐 */
+            }
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+            .nav-card {
+                padding: 18px 20px;
+            }
+            .nav-card h2 {
+                font-size: 1.2rem;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🗂️ 简历</h1>
+    
+    <div class="nav-container">
+        <!-- 保留了原来的链接地址，但移除了href，改用点击事件+密码弹窗 -->
+        <div class="nav-card" data-url="CV/3D-reconstruction-algorithm-engineer/index.html">
+            <h2>📄 三维重建算法工程师</h2>
+        </div>
+        <div class="nav-card" data-url="CV/SLAM-algorithm-engineer/index.html">
+            <h2>📄 SLAM算法工程师</h2>
+        </div>
+        <div class="nav-card" data-url="CV/deep-learning-high-performance-computing-engineer/index.html">
+            <h2>📄 深度学习高性能计算工程师</h2>
+        </div>
+        <div class="nav-card" data-url="CV/research-scholar/index.html">
+            <h2>📄 科研学者</h2>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            const ACCESS_HASH = '726696e7xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // 伪哈希示例
+            
+            // 简单的字符串转哈希函数 (用于对比)
+            function simpleHash(str) {
+                let hash = 0;
+                for (let i = 0; i < str.length; i++) {
+                    const char = str.charCodeAt(i);
+                    hash = ((hash << 5) - hash) + char;
+                    hash = hash & hash; // 转换为32位整数
+                }
+                return (hash >>> 0).toString(16).padStart(8, '0') + 
+                       'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // 填充至类似长度，仅为演示
+            }
+
+            // 获取所有卡片 (class="nav-card")
+            const cards = document.querySelectorAll('.nav-card');
+
+            // 为每个卡片添加点击事件
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // 获取要跳转的URL (从 data-url 属性读取)
+                    const targetUrl = this.dataset.url;
+                    if (!targetUrl) {
+                        console.warn('未找到对应的链接');
+                        return;
+                    }
+
+                    // 弹出密码输入框
+                    const userInput = prompt('🔒 此链接受保护，请输入密码:');
+
+                    // 用户点击取消 或 输入为空时，不进行任何跳转
+                    if (userInput === null) return;  // 取消
+                    if (simpleHash(userInput) === ACCESS_HASH) {
+                        // 密码正确，跳转
+                        window.location.href = targetUrl;
+                    } else {
+                        // 密码错误，提示
+                        alert('❌ 密码错误，无法访问。');
+                        console.warn(simpleHash(userInput));
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
