@@ -104,11 +104,12 @@
       color: #000; /* 简介文字改为黑色 */
       line-height: 1.6;
       margin-bottom: 3mm;
+      text-align: justify;
     }
     
     /* Experience Section 工作经历*/
     .experience-item {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
     
     .experience-header {
@@ -194,14 +195,6 @@
       color: #000; /* 教育详情改为黑色 */
     }
     
-    .education-info {
-      margin-bottom: 8px;
-    }
-    
-    .education-details p {
-      margin-bottom: 5px;
-    }
-    
     .education-highlights {
       padding-left: 20px;
       margin-top: 8px;
@@ -268,7 +261,7 @@
     
     /* Projects Section 项目经验*/
     .project-item {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       page-break-inside: avoid;
     }
     
@@ -276,7 +269,7 @@
       font-size: 14pt;
       font-weight: 600;
       color: #000; /* 项目标题改为黑色 */
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     
     .project-title a {
@@ -297,6 +290,7 @@
     .project-description li {
       white-space: normal;
       color: #000; /* 项目描述列表项改为黑色 */
+      margin-bottom: 3px;
     }
     
     .project-images {
@@ -349,6 +343,15 @@
     /* 链接颜色在 body 和全局中已设为黑色，这里确保覆盖 */
     a {
       color: #000; /* 所有链接改为黑色 */
+    }
+    
+    /* Publications */
+    .publication-item {
+      font-size: 10.5pt;
+      color: #000;
+      margin-bottom: 6px;
+      line-height: 1.5;
+      text-align: justify;
     }
     
     /* Print Specific Styles */
@@ -484,14 +487,25 @@
     .project-image-container {
         display: var(--show-project-images, block);
     }
+    /* 教育背景容器 */
+    .education-section {
+        display: var(--show-education, block);
+    }
+
+    /* 工作经历容器 */
+    .experience-section {
+        display: var(--show-experience, block);
+    }
   </style>
 </head>
 <body>
   <!-- 步骤1：修改此处变量以控制图片显示 -->
   <style>
     :root {
-        /* 修改变量值: 要显示图片，设为 'block'； 要隐藏图片，设为 'none' */
+        /* 修改变量值: 要显示，设为 'block'； 要隐藏，设为 'none' */
         --show-project-images: block;
+        --show-education: none;
+        --show-experience: none;
     }
   </style>
   <div class="resume-container">
@@ -499,23 +513,23 @@
     <div class="header">
       <div class="name-title">
         <div class="name">金闳奇</div>
-        <div class="title">三维重建算法工程师 | Mesh、3DGS、SLAM和CUDA</div>
+        <div class="title">三维重建算法工程师 | 3DGS、Mesh、SLAM、CUDA</div>
         <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <span>18819457624</span>
+          </div>
           <div class="contact-item">
             <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <span>jinhongqi1995@gmail.com</span>
           </div>
-          <!-- <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-            <span>188-194-57624</span>
-          </div> -->
           <div class="contact-item">
             <div class="contact-icon"><i class="fab fa-github"></i></div>
-            <a href="https://leonjinc.github.io/CV/3D-reconstruction-algorithm-engineer/index.html"><span>leonjinc.github.io</span></a>
+            <a href="https://leonjinc.github.io/CV/3D-reconstruction-algorithm-engineer/index.html"><span>github.io</span></a>
           </div>
           <div class="contact-item">
             <div class="contact-icon"><i class="fab fa-youtube"></i></div>
-            <a href="https://www.youtube.com/@3dRecon-SLAM"><span>3dRecon-SLAM</span></a>
+            <a href="https://www.youtube.com/@3dRecon-SLAM"><span>youtube</span></a>
           </div>
         </div>
       </div>
@@ -530,23 +544,23 @@
       <div class="section">
         <h2 class="section-title">个人简介</h2>
         <p class="profile-text">
-          本硕毕业于广东工业大学，在三维重建和视觉SLAM领域拥有5年工作经验，并持有测绘地理信息助理工程师职称。主要从事实景三维重建和SLAM的算法研发和应用工作，
-          包括实时二三维、3D高斯溅射、稠密点云、网格重建、正射影像和物体矢量化。
+          本硕毕业于广东工业大学，在三维重建与视觉SLAM领域拥有5年工作经验，持有测绘地理信息助理工程师职称。擅长从底层算法到工程落地的全链路研发，
+          覆盖SLAM/SfM、3DGS、稠密点云、网格重建、正射影像DOM等核心方向，具备机载端（ARM平台）与云端（NVIDIA/昇腾）部署经验。
         </p>
 
       </div>
       <!-- Education Section -->
-      <div class="section">
+      <div class="section education-section">
         <h2 class="section-title">教育背景</h2>
         
         <div class="education-item">
           <div class="education-header">
-            <div class="education-title">硕士  |  广东工业大学  |  机电工程学院  |  机械工程</div>
+            <div class="education-title">硕士 | 广东工业大学 | 机电工程学院 | 机械工程</div>
             <div class="date">2018.09 - 2021.06</div>
           </div>
           <div class="education-details">
             <ul class="education-highlights">
-              <li>计算机集成制造（CIMS）实验室，负责金属表面多视立体重建与目标检测算法研究</li>
+              <li>计算机集成制造（CIMS）实验室，研究方向：金属表面多视立体重建与目标检测算法</li>
               <li>一等学业奖学金、授权发明专利2项</li>
             </ul>
           </div>
@@ -554,32 +568,32 @@
         
         <div class="education-item">
           <div class="education-header">
-            <div class="education-title">学士  |  广东工业大学  |  机电工程学院  |  包装工程</div>
+            <div class="education-title">学士 | 广东工业大学 | 机电工程学院 | 包装工程</div>
             <div class="date">2013.09 - 2017.06</div>
           </div>
           <div class="education-details">
             <ul class="education-highlights">
-              <li>二等学业奖学金、本科优秀毕业论文奖、CET6</li>
+              <li>二等学业奖学金、本科优秀毕业论文奖、CET-6</li>
             </ul>
           </div>
         </div>
       </div>
       <!-- Work Experience -->
-      <div class="section">
+      <div class="section experience-section">
         <h2 class="section-title">工作经历</h2>
         
         <div class="experience-item">
           <div class="experience-header">
             <div class="experience-title-container">
-              <span class="experience-title">算法工程师</span>
-              <span class="company">中科云图-研发中心</span>
+              <span class="experience-title">视觉算法工程师</span>
+              <span class="company">中科云图 - 研发中心</span>
             </div>
             <div class="date">2024.12 - 至今</div>
           </div>
           <ul class="experience-details">
-            <li>实时建模算法研发（视频流、ORB-SLAM、实时3DGS、实时正射DOM、实时稠密点云）</li>
-            <li>大规模离线建模算法研发（多机融合定位、离线3DGS、网格重建Mesh、纹理映射、稠密点云重建）</li>
-            <li>建模算法应用于中科天网无人机云平台（UOS），支持英伟达和华为昇腾平台，实现云端建图</li>
+            <li>主导实时建模算法研发：视频流接入、ORB-SLAM位姿估计、实时3DGS重建、实时正射DOM</li>
+            <li>主导大规模离线建模算法研发：多机融合定位、离线3DGS、网格重建Mesh、纹理映射、稠密点云</li>
+            <li>算法部署于中科天网无人机云平台（UOS），同时支持英伟达CUDA与华为昇腾AscendCL双平台</li>
             <li>使用技术：C++、CUDA、G2O、OpenMVS、OpenCV、CGAL、libRTMP、FFmpeg、AscendCL</li>
           </ul>
         </div>
@@ -588,15 +602,15 @@
           <div class="experience-header">
             <div class="experience-title-container">
               <span class="experience-title">视觉算法工程师</span>
-              <span class="company">极飞科技-空间数字化部门</span>
+              <span class="company">极飞科技 - 空间数字化部门</span>
             </div>
-            <div class="date">2022.03 - 2024.12 (2.7年)</div>
+            <div class="date">2022.03 - 2024.12（2年9个月）</div>
           </div>
           <ul class="experience-details">
-            <li>机载端大规模正射影像建图（位姿估计SfM、稠密重建MVS、高程图DSM、正射图DOM）</li>
-            <li>单目鱼眼实时定位和建图（imu-deroling去果冻、vins-mono定位、稠密重建quadtree-mapping）</li>
-            <li>障碍物三维重建和矢量化（YOLOV5检测分割、line3d三维重建和矢量化、电线三维拓扑连接）</li>
-            <li>建模算法应用于P系列农业无人机和M系列遥感无人机，支持A311D和RK3588平台，实现机载端建图</li>
+            <li>机载端大规模正射影像建图：分群SfM位姿估计、MVS稠密重建、DSM高程图与DOM正射图生成</li>
+            <li>单目鱼眼实时定位与建图：IMU鱼眼去果冻畸变、VINS-Mono定位、QuadtreeMapping稠密重建</li>
+            <li>障碍物三维重建与矢量化：YOLOv5检测分割、Line3D三维重建与矢量化、电线三维拓扑连接</li>
+            <li>算法落地P系列农业无人机与M系列遥感无人机，支持A311D（1GB内存）与RK3588（8GB）平台</li>
             <li>使用技术：C++、OpenCL、SIMD、Ceres、OpenMVG、OpenMVS、GDAL、OpenCV</li>
           </ul>
         </div>
@@ -604,15 +618,15 @@
         <div class="experience-item">
           <div class="experience-header">
             <div class="experience-title-container">
-              <span class="experience-title">视觉算法工程师</span>
-              <span class="company">GE通用电气-精准医学研究院</span>
+              <span class="experience-title">算法工程师</span>
+              <span class="company">GE通用电气 - 精准医学研究院</span>
             </div>
-            <div class="date">2021.06 - 2022.02 (0.7年)</div>
+            <div class="date">2020.02 - 2022.02（实习转正）</div>
           </div>
           <ul class="experience-details">
-            <li>冠脉造影血管三维重建（Unet语义分割网络、基于双视图的中心线射影重建、网格重建）</li>
-            <li>CT图像管状结构重建（TDF管检测过滤、逆梯度流跟踪分割）</li>
-            <li>使用技术：C++、Python、OpenCL、OpenCV、ITK、MITK、VTK、QT</li>
+            <li>冠脉造影血管三维重建：U-Net语义分割、双视图中心线射影重建、网格重建</li>
+            <li>CT图像管状结构重建：TDF管检测过滤、逆梯度流跟踪分割</li>
+            <li>使用技术：C++、Python、OpenCL、OpenCV、ITK、MITK、VTK、Qt</li>
           </ul>
         </div>
       </div>
@@ -621,16 +635,16 @@
       
       <!-- Projects Section -->
       <div class="section">
-        <h2 class="section-title">项目经历</h2>
+        <h2 class="section-title">主要项目</h2>
         
         <div class="project-item">
-          <div class="project-title"><a href="https://github.com/LeonJinC/realtime3d" target="_blank">实时三维建图</a></div>
+          <div class="project-title"><a href="https://github.com/LeonJinC/realtime3d" target="_blank">实时三维建图（3DGS + 稠密点云 + Mesh）</a></div>
           <div class="project-description">
-            <li>3DGS-SLAM框架、SparseAdam稀疏梯度优化、瓦片AABB细化、高斯点云聚类和剔除</li>
-            <li>实时单目稠密点云重建、QuadtreeMapping四叉树多视图深度计算、多视图深度一致性过滤</li>
-            <li>高斯点云转换为 Cesium 3D Tiles 格式，支持spz压缩</li>
+            <li>搭建C++版本的SLAM-3DGS框架，通过SLAM关键帧和局部稠密点云初始化并实时更新3DGS模型</li>
+            <li>实时单目稠密点云重建：QuadtreeMapping四叉树多视图深度计算、 多视图深度一致性过滤</li>
+            <li>离线网格重建和纹理映射：伪双目图像GS渲染、DLNR视差估计、TSDF深度融合、纹理贴图和Mesh-3DTiles</li>
+            <li>高斯点云转换为Cesium 3D Tiles格式，支持spz压缩，可直接在Web端可视化</li>
           </div>
-          <!-- 步骤2：为每个图片链接块添加 project-image-container 类 -->
           <div class="project-image-container">
             <a href="https://github.com/LeonJinC/realtime3d" target="https://github.com/LeonJinC/realtime3d">
               <div class="project-images">
@@ -645,11 +659,12 @@
           </div>
         </div>
         <div class="project-item">
-          <div class="project-title"><a href="https://github.com/LeonJinC/realtime2d" target="_blank">实时二维建图</a></div>
+          <div class="project-title"><a href="https://github.com/LeonJinC/realtime2d" target="_blank">实时二维建图（视频流实时正射 + 多机融合建图）</a></div>
           <div class="project-description">
-            <li>视频流采用libRTMP拉流、FFmpeg-CUDA视频硬解码、CUDA实现YUV-NV12转RGB</li>
-            <li>实时位姿估计ORB-SLAM、GPS紧耦合优化、相机自标定</li>
-            <li>基于高斯差分金字塔的多波段图像拼接算法、金字塔瓦片化和磁盘缓存实现</li>
+            <li>视频流采用libRTMP拉流 + FFmpeg-CUDA硬解码 + CUDA实现YUV-NV12转RGB，端到端延迟 < 200ms</li>
+            <li>实时位姿估计：ORB-SLAM + GPS紧耦合优化 + 相机自标定</li>
+            <li>基于高斯差分金字塔的多波段图像拼接算法，支持金字塔瓦片化与磁盘缓存</li>
+            <li>支持多机融合：重叠区域检测、PnP位姿估计、相似变换矩阵估计、全局BA优化</li>
           </div>
           <div class="project-image-container">
             <a href="https://github.com/LeonJinC/realtime2d" target="https://github.com/LeonJinC/realtime2d">
@@ -664,31 +679,14 @@
             </a>
           </div>
         </div>
-        <div class="project-item">
-          <div class="project-title"><a href="https://github.com/LeonJinC/realtime2d_clusterfusion" target="_blank">多机融合建图</a></div>
-          <div class="project-description">
-            <li>单架次采用实时二维建图方案，多机融合实现多架次的坐标系对齐和联合优化</li>
-            <li>重叠区域检测、PnP位姿估计、相似变换矩阵估计、全局BA优化</li>
-          </div>
-          <div class="project-image-container">
-            <a href="https://github.com/LeonJinC/realtime2d_clusterfusion" target="https://github.com/LeonJinC/realtime2d_clusterfusion">
-              <div class="project-images">
-                <div class="project_photo">
-                  <img src="https://github.com/LeonJinC/realtime2d_clusterfusion/blob/master/fig/framework.jpg?raw=true">
-                </div>
-                <div class="project_photo">
-                  <img src="https://github.com/LeonJinC/realtime2d_clusterfusion/blob/master/fig/result.jpg?raw=true">
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+
         <div class="project-item">
           <div class="project-title"><a href="https://github.com/LeonJinC/unitymapper" target="_blank">机载端大规模正射影像建图</a></div>
           <div class="project-description">
-            <li>位姿估计采用分群SfM，稠密重建MVS、高程图DSM和正射图DOM根据内存动态分块计算</li>
-            <li>最低可适配1GB ARM机载端建图（A311D）、大规模8000亩落地出图（RK3588 8GB内存）、弱纹理场景的特征算法优化（autoscale-sift特征及匹配）</li>
-            <li>数据转换为3DTiles格式（imagery、pnts和terrain），配合CesiumJS可实现前端可视化</li>
+            <li>分群SfM位姿估计 + MVS稠密重建 + DSM/DOM动态分块计算，适配内存受限的机载ARM平台</li>
+            <li>最低可适配1GB ARM机载端建图（A311D）、大规模8000亩落地出图（RK3588 8GB内存）</li>
+            <li>弱纹理场景特征优化：autoscale-SIFT特征提取与匹配</li>
+            <li>数据转换为3D Tiles格式（imagery/pnts/terrain），配合CesiumJS前端可视化</li>
           </div>
           <div class="project-image-container">
             <a href="https://github.com/LeonJinC/unitymapper" target="https://github.com/LeonJinC/unitymapper">
@@ -726,85 +724,32 @@
 
 
         <div class="project-item">
-          <div class="project-title"><a href="https://github.com/LeonJinC/sift_algorithm" target="_blank">DSP端实现SIFT算法硬件加速</a></div>
+          <div class="project-title"><a href="https://github.com/LeonJinC/sift_algorithm" target="_blank">DSP端SIFT算法硬件加速</a></div>
           <div class="project-description">
             <li>基于Ceva XM4芯片的数据结构和SIMD接口完整复现SIFT算法</li>
             <li>高斯滤波、高斯差分、局部极值点优化、双调排序、角度分配、三线性差值的旋转不变表示</li>
           </div>
-
-          <!-- <div class="project-images">
-            <div class="project_photo">
-              <img src="https://github.com/LeonJinC/LeonJinC.github.io/blob/main/images/基于DSP完整复现SIFT算法/image1.png?raw=true">
-            </div>
-            <div class="project_photo">
-              <img src="https://github.com/LeonJinC/LeonJinC.github.io/blob/main/images/基于DSP完整复现SIFT算法/image2.png?raw=true">
-            </div>
-            <div class="project_photo">
-              <img src="https://github.com/LeonJinC/LeonJinC.github.io/blob/main/images/基于DSP完整复现SIFT算法/image3.png?raw=true">
-            </div>
-          </div> -->
-
-        </div>
-
-      </div>
-      <div class="section">
-        <h2 class="section-title">论著专利</h2>
-        <p>[1] Li Tang, Hongqi Jin, Yan Zhou, X. Liu, <strong>DOMapping: Multi-UAV Real-Time DOM Mapping with Local-to-Global Optimization</strong>, ISPRS Journal of Photogrammetry and Remote Sensing 235 (2026) 565-583.</p>
-        <p>[2] Yan Zhou, Li Tang, Hongqi Jin, X. Liu, <strong>OUSA-GS: real-time structurally-consistent 3D reconstruction of outdoor unbounded scenes via adaptive Gaussian splatting</strong>, Knowledge-Based Systems 331 (2025) 114834.</p>
-        <p>[3] 广州极飞科技股份有限公司.图像处理方法及其装置、电子设备和计算机可读存储介质:202211407991.6[P].2025-10-21.</p>
-        <p>[4] 广东工业大学.矩形多光源打光装置及其应用的缺陷检测方法:201910507312.4[P].2022-05-27.</p>
-      </div>
-      <!-- Skills Section 
-      <div class="section">
-        <h2 class="section-title">专业技能</h2>
-        <div class="skills-container">
-          <div class="skill-category">
-            <div class="category-title">核心算法</div>
-            <div class="skill-list">
-              <div>SLAM/VIO/SfM</div>
-              <div>3D高斯溅射</div>
-              <div>正射影像DOM</div>
-              <div>SGBM/PatchMatch</div>
-              <div>网格重建Mesh</div>
-            </div>
-          </div>
-          
-          <div class="skill-category">
-            <div class="category-title">编程语言</div>
-            <div class="skill-list">
-              <div>C++</div>
-              <div>SIMD指令集</div>
-              <div>CUDA/OpenCL</div>
-              <div>Python</div>
-              <div>AscendCL</div>
-            </div>
-          </div>
-          
-          <div class="skill-category">
-            <div class="category-title">框架与工具</div>
-            <div class="skill-list">
-              <div>Ceres/G2O</div>
-              <div>OpenCV</div>
-              <div>OpenMVG/MVS</div>
-              <div>colmap/glomap</div>
-              <div>PyTorch/TF</div>
-            </div>
-          </div>
-          
-          <div class="skill-category">
-            <div class="category-title">工程开发</div>
-            <div class="skill-list">
-              <div>Linux程序开发</div>
-              <div>算法优化与加速</div>
-              <div>多线程并行计算</div>
-              <div>Docker部署</div>
-              <div>Git代码管理</div>
-            </div>
-          </div>
         </div>
       </div>
-      -->
-      
+      <div class="section">
+        <h2 class="section-title">论文与专利</h2>
+        <p class="publication-item">
+          [1] Li Tang, <strong>Hongqi Jin</strong>, Yan Zhou, et al. 
+          <strong>DOMapping: Multi-UAV Real-Time DOM Mapping with Local-to-Global Optimization</strong>, 
+          <em>ISPRS Journal of Photogrammetry and Remote Sensing</em>, 235 (2026): 565-583. 
+          （负责核心算法实现与实验验证：多无人机实时DOM建图的局部到全局优化框架）
+        </p>
+        
+        <p class="publication-item">
+          [2] Yan Zhou, Li Tang, <strong>Hongqi Jin</strong>, et al. 
+          <strong>OUSA-GS: Real-Time Structurally-Consistent 3D Reconstruction of Outdoor Unbounded Scenes via Adaptive Gaussian Splatting</strong>, 
+          <em>Knowledge-Based Systems</em>, 331 (2025): 114834. 
+          （负责算法实现与实验：自适应高斯溅射的室外无界场景实时三维重建）
+        </p>
+        <p class="publication-item">[3] 广州极飞科技股份有限公司.图像处理方法及其装置、电子设备和计算机可读存储介质:202211407991.6[P].2025-10-21.</p>
+        <p class="publication-item">[4] 广东工业大学.矩形多光源打光装置及其应用的缺陷检测方法:201910507312.4[P].2022-05-27.</p>
+      </div>
+
 
     </div>
   </div>
