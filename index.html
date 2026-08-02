@@ -643,7 +643,7 @@
             <li>搭建C++版本的SLAM-3DGS框架，通过SLAM关键帧和局部稠密点云初始化并实时更新3DGS模型</li>
             <li>实时单目稠密点云重建：QuadtreeMapping四叉树多视图深度计算、 多视图深度一致性过滤</li>
             <li>离线网格重建和纹理映射：伪双目图像GS渲染、DLNR视差估计、TSDF深度融合、纹理贴图和Mesh-3DTiles</li>
-            <li>高斯点云转换为Cesium 3D Tiles格式，支持spz压缩，可直接在Web端可视化</li>
+            <li>高斯点云转换为3DTiles，实现点云瓦片化和瓦片spz压缩，支持CesiumJS 1.135及最新版本</li>
           </div>
           <div class="project-image-container">
             <a href="https://github.com/LeonJinC/realtime3d" target="https://github.com/LeonJinC/realtime3d">
@@ -661,7 +661,7 @@
         <div class="project-item">
           <div class="project-title"><a href="https://github.com/LeonJinC/realtime2d" target="_blank">实时二维建图（视频流实时正射 + 多机融合建图）</a></div>
           <div class="project-description">
-            <li>视频流采用libRTMP拉流 + FFmpeg-CUDA硬解码 + CUDA实现YUV-NV12转RGB，端到端延迟 < 200ms</li>
+            <li>视频流采用libRTMP拉流 + FFmpeg-CUDA硬解码 + CUDA实现YUV-NV12转RGB</li>
             <li>实时位姿估计：ORB-SLAM + GPS紧耦合优化 + 相机自标定</li>
             <li>基于高斯差分金字塔的多波段图像拼接算法，支持金字塔瓦片化与磁盘缓存</li>
             <li>支持多机融合：重叠区域检测、PnP位姿估计、相似变换矩阵估计、全局BA优化</li>
@@ -683,9 +683,8 @@
         <div class="project-item">
           <div class="project-title"><a href="https://github.com/LeonJinC/unitymapper" target="_blank">机载端大规模正射影像建图</a></div>
           <div class="project-description">
-            <li>分群SfM位姿估计 + MVS稠密重建 + DSM/DOM动态分块计算，适配内存受限的机载ARM平台</li>
+            <li>AutoScale-SIFT（支持弱纹理场景） + 分群SfM位姿估计 + MVS稠密重建 + DSM/DOM动态分块计算</li>
             <li>最低可适配1GB ARM机载端建图（A311D）、大规模8000亩落地出图（RK3588 8GB内存）</li>
-            <li>弱纹理场景特征优化：autoscale-SIFT特征提取与匹配</li>
             <li>数据转换为3D Tiles格式（imagery/pnts/terrain），配合CesiumJS前端可视化</li>
           </div>
           <div class="project-image-container">
@@ -703,10 +702,11 @@
         </div>
         
         <div class="project-item">
-          <div class="project-title"><a href="https://github.com/LeonJinC/open_fisheye_derolling" target="_blank">机载端鱼眼imu-deroling去果冻</a></div>
+          <div class="project-title"><a href="https://github.com/LeonJinC/open_fisheye_derolling" target="_blank">单目鱼眼实时定位</a></div>
           <div class="project-description">
-            <li>imu-tk标定imu的加速度计和陀螺仪内参、kalibr标定imu和相机外参、imu内容和图像内容时延标定、RS的readout时间标定</li>
-            <li>陀螺仪角速度积分相机相对姿态、imu-derolling单应矩阵构建、混合单应及其SIMD加速计算</li>
+            <li>IMU相机标定：imu-tk标定imu的加速度计和陀螺仪内参、kalibr标定imu和相机外参、imu内容和图像内容时延标定、RS的readout时间标定</li>
+            <li>IMU鱼眼去果冻：陀螺仪角速度积分相机相对姿态、imu-derolling单应矩阵构建、混合单应及其SIMD加速计算</li>
+            <li>VINS单目位姿估计：IMU预积分、Harris角点检测和光流跟踪、视觉IMU联合优化、回环检测和优化</li>
           </div>
           <div class="project-image-container">
             <a href="https://github.com/LeonJinC/open_fisheye_derolling" target="https://github.com/LeonJinC/open_fisheye_derolling">
