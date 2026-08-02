@@ -503,9 +503,9 @@
   <style>
     :root {
         /* 修改变量值: 要显示，设为 'block'； 要隐藏，设为 'none' */
-        --show-project-images: block;
-        --show-education: none;
-        --show-experience: none;
+        --show-project-images: none;
+        --show-education: block;
+        --show-experience: block;
     }
   </style>
   <div class="resume-container">
@@ -643,7 +643,7 @@
             <li>搭建C++版本的SLAM-3DGS框架，通过SLAM关键帧和局部稠密点云初始化并实时更新3DGS模型</li>
             <li>实时单目稠密点云重建：QuadtreeMapping四叉树多视图深度计算、 多视图深度一致性过滤</li>
             <li>离线网格重建和纹理映射：伪双目图像GS渲染、DLNR视差估计、TSDF深度融合、纹理贴图和Mesh-3DTiles</li>
-            <li>高斯点云转换为3DTiles，实现点云瓦片化和瓦片spz压缩，支持CesiumJS 1.135及最新版本</li>
+            <li>开源libTileSplat：高斯转换3DTiles、点云瓦片化和瓦片SPZ压缩，兼容CesiumJS 1.135及后续版本</li>
           </div>
           <div class="project-image-container">
             <a href="https://github.com/LeonJinC/realtime3d" target="https://github.com/LeonJinC/realtime3d">
